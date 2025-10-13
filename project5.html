@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Transformation | Valerie Kelechukwu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #581C1C;
+      color: #4B002E;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes glow { 0% { box-shadow: 0 0 0 rgba(255,182,193,0); } 50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); } 100% { box-shadow: 0 0 0 rgba(255,182,193,0); } }
+
+    .hero {
+      background: #FCEDEA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 60px 20px;
+      height: 70vh;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      animation: fadeUp 1s ease-out;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards;
+      animation-delay: 0.3s;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .hero img:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+
+    .hero h1 {
+      font-size: 36px;
+      color: #581C1C;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 70px auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      padding: 50px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+    .container.visible { opacity: 1; transform: translateY(0); animation: glow 2.5s ease-in-out; }
+
+    h2 { color: #800040; margin-bottom: 15px; font-size: 24px; }
+    p, ul { color: #333; line-height: 1.7; font-size: 15px; }
+    li { margin-bottom: 8px; }
+
+    .tools {
+      margin-top: 25px;
+      background-color: #ffe6eb;
+      padding: 12px 16px;
+      border-radius: 10px;
+      display: inline-block;
+      font-weight: 500;
+      color: #800040;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .tools:hover { background-color: #ffd0db; transform: scale(1.05); }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .gallery img {
+      width: 480px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    .gallery img.visible { opacity: 1; transform: translateY(0); animation: fadeUp 1s ease forwards; }
+    .gallery img:hover { transform: scale(1.04); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+
+    @media (max-width: 900px) { .hero { height: auto; padding: 40px 20px; } .gallery img { width: 100%; } }
+
+    .back-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 12px 25px;
+      background-color: #581C1C;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
+    }
+    .back-btn:hover { background-color: #a00060; transform: scale(1.05); }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <img src="../image/image1.png" alt="Data Transformation Project">
+    <h1>Data Transformation</h1>
+  </section>
+
+  <!-- CONTENT SECTION -->
+  <div class="container reveal">
+    <h2>Project Overview</h2>
+    <p>
+      This project focuses on cleaning and transforming a one-day supply transaction dataset that contains multiple product categories and amounts merged within single cells. 
+      The goal is to restructure the data into a clear and analyzable format, making it easier to identify spending patterns and transaction summaries. 
+      Through this process, the project demonstrates the importance of data cleaning and organization in turning messy raw data into valuable insights.
+    </p>
+
+    <h2>Objectives</h2>
+    <ul>
+      <li>To clean and transform merged transaction data into a structured format.</li>
+      <li>To align each product category with its correct transaction amount.</li>
+      <li>To prepare the data for clear analysis and visualization of spending patterns.</li>
+    </ul>
+
+    <h2>Techniques and Tools Used</h2>
+    <ul>
+      <li><b>Techniques:</b> Data Cleaning, Data Transformation, Data Visualization, Descriptive Statistics</li>
+      <li><b>Tools:</b> Python (Pandas, Matplotlib)</li>
+    </ul>
+
+    <div class="gallery">
+      <img src="../image/image2.png" alt="Data Cleaning Process" class="reveal">
+    </div>
+
+    <p style="text-align:center; margin-top:50px; font-style:italic; color:#581C1C;">
+      ✨ This transformation turned disorganized transaction data into a structured format for effective spending analysis.
+    </p>
+
+    <div style="text-align:center; margin-top:40px;">
+      <a href="index.html" class="back-btn">← Back to Portfolio</a>
+    </div>
+  </div>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal, .gallery img, .container');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => observer.observe(r));
+  </script>
+</body>
+</html>

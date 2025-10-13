@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Revenue & Customer Segmentation Analytics | Valerie Kelechukwu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #581C1C;
+      color: #4B002E;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes glow { 0% { box-shadow: 0 0 0 rgba(255,182,193,0); } 50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); } 100% { box-shadow: 0 0 0 rgba(255,182,193,0); } }
+
+    .hero {
+      background: #FCEDEA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 60px 20px;
+      height: 70vh;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      animation: fadeUp 1s ease-out;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transform: translateY(10px);
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards;
+      animation-delay: 0.3s;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .hero img:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+
+    .hero h1 { font-size: 36px; margin-bottom: 10px; color: #581C1C; text-shadow: 0 2px 4px rgba(0,0,0,0.25); opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 0.8s; }
+    .hero p { font-size: 17px; max-width: 700px; color: #581C1C; opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 1.2s; }
+
+    .container {
+      max-width: 1100px;
+      margin: 70px auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      padding: 50px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+    .container.visible { opacity: 1; transform: translateY(0); animation: glow 2.5s ease-in-out; }
+
+    h2 { color: #800040; margin-bottom: 15px; font-size: 24px; }
+    p, ul { color: #333; line-height: 1.7; font-size: 15px; }
+    li { margin-bottom: 8px; }
+
+    .tools { margin-top: 25px; background-color: #ffe6eb; padding: 12px 16px; border-radius: 10px; display: inline-block; font-weight: 500; color: #800040; transition: background 0.3s ease, transform 0.3s ease; }
+    .tools:hover { background-color: #ffd0db; transform: scale(1.05); }
+
+    .gallery { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+    .gallery img { width: 480px; height: auto; border-radius: 15px; box-shadow: 0 8px 18px rgba(0,0,0,0.2); transition: transform 0.4s ease, box-shadow 0.4s ease; opacity: 0; transform: translateY(50px); }
+    .gallery img.visible { opacity: 1; transform: translateY(0); animation: fadeUp 1s ease forwards; }
+    .gallery img:hover { transform: scale(1.04); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+
+    @media (max-width: 900px) { .hero { height: auto; padding: 40px 20px; } .gallery img { width: 100%; } }
+
+    .back-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 12px 25px;
+      background-color: #581C1C;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
+    }
+    .back-btn:hover { background-color: #a00060; transform: scale(1.05); }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <img src="../image/ccd.png" alt="Revenue & Customer Segmentation Dashboard">
+    <h1>Revenue & Customer Segmentation Analytics</h1>
+  </section>
+
+  <!-- CONTENT SECTION -->
+  <div class="container reveal">
+    <h2>Project Overview</h2>
+    <p>
+      This project combines <strong>Revenue Analytics</strong>, <strong>Customer Segmentation</strong>, and <strong>Machine Learning modeling</strong> to provide actionable business insights. 
+      It involves data cleaning (handling missing values, outliers, skewed data), RFM-based customer segmentation, and predictive modeling to identify high-value customers.
+    </p>
+
+    <h2>Purpose</h2>
+    <p style="text-align: justify;">
+      The purpose of this project is to analyze customer transactional data to identify patterns, segment customers based on behavior, and develop predictive models that help optimize marketing strategies, improve customer retention, and increase overall revenue.
+    </p>
+
+    <h2>Objectives</h2>
+    <ul>
+      <li>Perform EDA to handle missing values, outliers, and skewed data.</li>
+      <li>Create RFM-based customer segments for profiling.</li>
+      <li>Build ML cluster models to predict high-value customers.</li>
+      <li>Generate insights to improve marketing strategies and customer retention.</li>
+    </ul>
+
+    <h2>Revenue Analytics</h2>
+    <ul>
+      <li><strong>Total Revenue:</strong> $9.73 million across 536,628 transactions</li>
+      <li><strong>Average Order Value:</strong> $18.13</li>
+      <li><strong>Top Product Contribution:</strong> Top 10 products account for 10% of total revenue</li>
+      <li><strong>Revenue by Region:</strong> Highest earnings from the United Kingdom, Netherlands, and EIRE</li>
+      <li><strong>Revenue Over Time:</strong> Seasonal peaks and dips highlight promotional impacts</li>
+      <li><strong>Revenue by Transaction Type:</strong> One dominant type generated over $10.9 million</li>
+    </ul>
+
+    <h2>Customer Segmentation Analytics</h2>
+    <ul>
+      <li><strong>Total Customers:</strong> 401,548 records with 4,372 unique customers</li>
+      <li><strong>Retention Rate:</strong> 69.97%</li>
+      <li><strong>Churn Rate:</strong> 30.03%</li>
+      <li><strong>RFM Segmentation:</strong>
+        <ul>
+          <li>New Customers: 14.63%</li>
+          <li>Behavior Pending: 64.61%</li>
+          <li>Lost Customers: 20.68%</li>
+        </ul>
+      </li>
+      <li><strong>Cohort Analysis:</strong> Tracks customer engagement over time, revealing drop-off points</li>
+    </ul>
+
+    <h2>ML Modeling Insights</h2>
+    <ul>
+      <li>High-value customers predicted using RFM features and clustering techniques.</li>
+      <li>Helps prioritize marketing efforts for segments with highest potential revenue.</li>
+      <li>Provides actionable insights for improving customer retention strategies.</li>
+    </ul>
+
+    <div class="tools">
+      🔧 Tools Used: Power BI · Excel · Python (EDA, RFM, ML Modeling) · RFM & Cohort Analysis
+    </div>
+
+    <!-- IMAGE GALLERY -->
+    <div class="gallery">
+      <img src="../image/rcd.png" alt="Revenue by Region" class="reveal">
+      <p style="color:#581C1C; text-align:center;">
+💡 Delivered actionable insights from customer and revenue data, enabling smarter marketing decisions, improved customer retention, and increased profitability.
+</p>
+
+    </div>
+
+    <div style="text-align:center; margin-top:40px;">
+      <a href="index.html" class="back-btn">← Back to Portfolio</a>
+    </div>
+
+  </div>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal, .gallery img, .container');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => observer.observe(r));
+  </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Finance Insights Dashboard | Valerie Kelechukwu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #581C1C;
+      color: #4B002E;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 0 rgba(255,182,193,0); }
+      50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); }
+      100% { box-shadow: 0 0 0 rgba(255,182,193,0); }
+    }
+
+    .hero {
+      background: #FCEDEA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 60px 20px;
+      height: 70vh;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      animation: fadeUp 1s ease-out;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards;
+      animation-delay: 0.3s;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .hero img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      color: #581C1C;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 70px auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      padding: 50px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    .container.visible {
+      opacity: 1;
+      transform: translateY(0);
+      animation: glow 2.5s ease-in-out;
+    }
+
+    h2 {
+      color: #800040;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    p, ul {
+      color: #333;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    li { margin-bottom: 8px; }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .gallery img {
+      width: 480px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    .gallery img.visible {
+      opacity: 1;
+      transform: translateY(0);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    @media (max-width: 900px) {
+      .hero { height: auto; padding: 40px 20px; }
+      .gallery img { width: 100%; }
+    }
+
+    .back-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 12px 25px;
+      background-color: #581C1C;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .back-btn:hover {
+      background-color: #a00060;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <img src="../image/dashboard5.png" alt="Personal Finance Insights Dashboard">
+    <h1>Personal Finance Insights Dashboard (ETL + SQL + Power BI)</h1>
+  </section>
+
+  <!-- CONTENT SECTION -->
+  <div class="container reveal">
+    <h2>🧾 Project Overview</h2>
+    <p>
+      This project focuses on developing an interactive <b>Personal Finance Insights Dashboard</b> that visualizes and analyzes daily income and spending patterns. 
+      The process began with raw transaction data that required cleaning, enrichment, and transformation before being modeled for analytics. 
+      The goal was to connect all stages of the data pipeline — from <b>data collection to visualization</b> — providing real-time financial insights.
+    </p>
+
+    <h2>🎯 Purpose</h2>
+    <p>
+      To build an <b>automated, data-driven finance tracking solution</b> that enables users to understand inflows, outflows, and overall financial health over time. 
+      The dashboard highlights trends, spending categories, and net savings using data extracted from a relational database.
+    </p>
+
+    <h2>✅ Objectives</h2>
+    <ul>
+      <li>Clean and prepare raw transaction data for analysis.</li>
+      <li>Describe and categorize each transaction for clarity and accuracy.</li>
+      <li>Ingest structured data into a SQL database for storage and querying.</li>
+      <li>Design an interactive Power BI dashboard that visualizes key metrics like inflow, outflow, and balance trends.</li>
+      <li>Integrate all workflow stages — <b>Excel → Python → SQL → Power BI</b>.</li>
+    </ul>
+
+    <h2>🧰 Process and Tools Used</h2>
+    <ul>
+      <li><b>Excel – Data Cleaning:</b> Handled missing values, removed duplicates, and standardized categories to ensure integrity.</li>
+      <li><b>Python (Pandas):</b> Transformed and categorized transactions, formatted dates and amounts, computed balances, and ingested data into SQL using connectivity libraries.</li>
+      <li><b>SQL Database:</b> Created relational schema, aggregated and summarized data for Power BI.</li>
+      <li><b>Power BI:</b> Connected to SQL for dynamic visualizations showing inflow vs. outflow, balance trends, and expense categories.</li>
+    </ul>
+
+    <div class="gallery">
+      <img src="../image/bank1.png" alt="Transaction Data Cleaning" class="reveal">
+      <img src="../image/bank2.png" alt="Power BI Dashboard" class="reveal">
+    </div>
+
+    <p style="text-align:center; margin-top:50px; font-style:italic; color:#581C1C;">
+✨ Transforming your personal account data into clear insights to help track spending, manage finances, and make informed decisions.
+</p>
+
+
+    <div style="text-align:center; margin-top:40px;">
+      <a href="index.html" class="back-btn">← Back to Portfolio</a>
+    </div>
+  </div>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal, .gallery img, .container');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => observer.observe(r));
+  </script>
+
+</body>
+</html>

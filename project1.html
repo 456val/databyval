@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Performance Analysis | Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Hero Section */
+    .project-hero {
+      background: linear-gradient(135deg, #581C1C, #A05252);
+      color: #FCEDEA;
+      text-align: center;
+      padding: 140px 20px 100px;
+    }
+
+    .project-hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .project-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Project Detail */
+    .project-detail {
+      max-width: 1100px;
+      margin: -60px auto 100px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      padding: 60px 40px;
+      position: relative;
+      z-index: 5;
+      color: #3D0C02;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #581C1C;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+
+    .overview {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .overview strong {
+      color: #A05252;
+    }
+
+    /* Insight Cards */
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+
+    .insight-card {
+      background: #FCEDEA;
+      border-left: 6px solid #A05252;
+      border-radius: 12px;
+      padding: 25px 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .insight-card h4 {
+      color: #581C1C;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    /* Visual Grid */
+    .visuals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 50px;
+      margin: 50px 0;
+    }
+
+    .visual {
+      background-color: #FCEDEA;
+      border-radius: 12px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #A05252;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: 0.3s ease;
+    }
+
+    .visual:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Summary */
+    .summary {
+      margin-top: 40px;
+      text-align: center;
+      font-style: italic;
+      color: #3D0C02;
+    }
+
+    /* Back Button */
+    .btn-back {
+      display: inline-block;
+      margin-top: 50px;
+      background: #581C1C;
+      color: #fff;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background: #732626;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="project-hero">
+    <h1>📊 Sales Performance Analysis</h1>
+    <p>Uncovering patterns, seasonal trends, and sales behaviors using SQL and Excel analytics</p>
+  </section>
+
+  <!-- Main Project Detail -->
+  <div class="project-detail">
+    <div class="overview">
+      <p><strong>Tools & Technologies:</strong> SQL · Excel · Aggregate & Date Functions · Business Reporting</p>
+      <p>
+        This project explored <strong> sales data</strong> to uncover how performance, behavior, and
+        revenue fluctuated across timeframes. Using SQL, I aggregated sales by day, week, month, and quarter to build a data story that connects business operations with performance trends.
+      </p>
+    </div>
+
+    <h3 class="section-title">Visual Highlights</h3>
+    <div class="visuals-grid">
+      <div class="visual"><img src="../image/SS1.png" width="1000px" height="220px" alt="Daily Revenue Trend"></div>
+      <div class="visual"><img src="../image/SS2.png" width="1000px" height="220px" alt="Weekly Performance"></div>
+      <div class="visual"><img src="../image/SS3.png" width="1000px" height="220px" alt="Monthly Summary"></div>
+      <div class="visual"><img src="../image/SS4.png" width="1000px" height="220px" alt="Quarter Comparison"></div>
+    </div>
+
+    <h3 class="section-title">Key Insights</h3>
+
+    <div class="insights-grid">
+      <div class="insight-card">
+        <h4>📅 Daily & Weekly Performance</h4>
+        <p>October 6 had the highest invoice count (219), while February 6 had the lowest (11). November 14 saw the highest daily revenue (₦112,141). Week 47 of 2011 was the strongest across all metrics, while Week 52 reflected a post-holiday slowdown.</p>
+      </div>
+
+      <div class="insight-card">
+        <h4>🗓️ Monthly & Quarterly Trends</h4>
+        <p>December 2011 was the top month by total revenue, with Q1 2011 generating ₦17.41M. Q4 2010 followed with ₦748,957, signaling a strong close to the year.</p>
+      </div>
+
+      <div class="insight-card">
+        <h4>📈 Weekday vs Weekend Revenue</h4>
+        <p>Weekdays outperformed weekends across most quarters. However, Q3 revealed a behavioral shift where weekend sales slightly exceeded weekday performance—possibly due to campaigns or seasonal demand.</p>
+      </div>
+
+      <div class="insight-card">
+        <h4>🕒 Time-of-Day Behavior</h4>
+        <p>Peak transactions occurred between <strong>12–4 PM</strong>, marking midday as the optimal engagement window. Sales began steadily from 8–12 PM and declined after 4 PM.</p>
+      </div>
+
+      <div class="insight-card">
+        <h4>📆 Day-of-Week Performance</h4>
+        <p>Thursday recorded the highest invoice count (5,660), followed by Wednesday and Tuesday. Sunday consistently had the lowest activity (2,381 invoices), likely due to limited business hours.</p>
+      </div>
+
+      <div class="insight-card">
+        <h4>💰 Average vs Median Revenue</h4>
+        <p>Average revenue highlighted transaction profitability, while median provided a more balanced picture of sales distribution, unaffected by high-value outliers.</p>
+      </div>
+    </div>
+
+    <p class="summary">
+      These insights go beyond identifying highs and lows—they reveal behavioral patterns,
+      seasonal dynamics, and operational opportunities that guide smarter marketing and sales timing.
+    </p>
+
+    <div style="text-align:center;">
+      <a href="index.html#projects" class="btn-back">← Back to Portfolio</a>
+    </div>
+  </div>
+
+</body>
+</html>
