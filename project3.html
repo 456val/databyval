@@ -5,48 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pharmaceutical Sales Analytics | Valerie Kelechukwu</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
- 
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #581C1C; /* soft pink background */
-      color: #4B002E; /* burgundy text */
+      background-color: #581C1C;
+      color: #4B002E;
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes glow { 0% { box-shadow: 0 0 0 rgba(255,182,193,0); } 50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); } 100% { box-shadow: 0 0 0 rgba(255,182,193,0); } }
 
-    @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-60px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(60px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes glow {
-      0% { box-shadow: 0 0 0 rgba(255,182,193,0); }
-      50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); }
-      100% { box-shadow: 0 0 0 rgba(255,182,193,0); }
-    }
-
-    /* ===== HERO SECTION ===== */
     .hero {
       background: #FCEDEA;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #fff;
       flex-direction: column;
       padding: 60px 20px;
       height: 70vh;
@@ -69,31 +46,9 @@
       transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
 
-    .hero img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-    }
+    .hero img:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+    .hero h1 { font-size: 36px; margin-bottom: 10px; color: #581C1C; text-shadow: 0 2px 4px rgba(0,0,0,0.25); opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 0.8s; }
 
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-      color: #581C1C;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 0.8s;
-    }
-
-    .hero p {
-      font-size: 17px;
-      max-width: 700px;
-      color: #581C1C;
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 1.2s;
-    }
-
-    /* ===== CONTENT SECTION ===== */
     .container {
       max-width: 1100px;
       margin: 70px auto;
@@ -106,27 +61,11 @@
       transition: all 1s ease;
     }
 
-    .container.visible {
-      opacity: 1;
-      transform: translateY(0);
-      animation: glow 2.5s ease-in-out;
-    }
+    .container.visible { opacity: 1; transform: translateY(0); animation: glow 2.5s ease-in-out; }
 
-    h2 {
-      color: #800040;
-      margin-bottom: 15px;
-      font-size: 24px;
-    }
-
-    p, ul {
-      color: #333;
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
+    h2 { color: #800040; margin-bottom: 15px; font-size: 24px; }
+    p, ul { color: #333; line-height: 1.7; font-size: 15px; }
+    li { margin-bottom: 8px; }
 
     .tools {
       margin-top: 25px;
@@ -138,13 +77,8 @@
       color: #800040;
       transition: background 0.3s ease, transform 0.3s ease;
     }
+    .tools:hover { background-color: #ffd0db; transform: scale(1.05); }
 
-    .tools:hover {
-      background-color: #ffd0db;
-      transform: scale(1.05);
-    }
-
-    /* ===== GALLERY SECTION ===== */
     .gallery {
       display: flex;
       justify-content: center;
@@ -152,7 +86,6 @@
       flex-wrap: wrap;
       margin-top: 40px;
     }
-
     .gallery img {
       width: 480px;
       height: auto;
@@ -162,59 +95,35 @@
       opacity: 0;
       transform: translateY(50px);
     }
+    .gallery img.visible { opacity: 1; transform: translateY(0); animation: fadeUp 1s ease forwards; }
+    .gallery img:hover { transform: scale(1.04); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
 
-    .gallery img.visible {
-      opacity: 1;
-      transform: translateY(0);
-      animation: fadeUp 1s ease forwards;
+    @media (max-width: 900px) { .hero { height: auto; padding: 40px 20px; } .gallery img { width: 100%; } }
+
+    .back-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 12px 25px;
+      background-color: #581C1C;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
     }
-
-    .gallery img:hover {
-      transform: scale(1.04);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        height: auto;
-        padding: 40px 20px;
-      }
-      .gallery img {
-        width: 100%;
-      }
-    }
-.back-btn {
-  position: fixed;
-  bottom: 30px;      /* distance from bottom */
-  right: 30px;       /* distance from right */
-  padding: 12px 25px;
-  background-color:#581C1C ; /* burgundy */
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: background 0.3s ease, transform 0.3s ease;
-  z-index: 1000;     /* ensures it stays on top */
-}
-
-.back-btn:hover {
-  background-color: #a00060; /* slightly lighter burgundy */
-  transform: scale(1.05);
-}
-
+    .back-btn:hover { background-color: #a00060; transform: scale(1.05); }
   </style>
 </head>
 <body>
 
-  <!-- ===== HERO SECTION ===== -->
   <section class="hero">
     <img src="image/pco.png" alt="Pharmaceutical Dashboard Main">
     <h1>Pharmaceutical Sales Performance Dashboard</h1>
-   
   </section>
 
-  <!-- ===== CONTENT SECTION ===== -->
   <div class="container reveal">
     <h2>Project Overview</h2>
     <p>
@@ -234,32 +143,26 @@
       🔧 Tools Used: Power BI  
     </div>
 
-    <!-- ===== IMAGE GALLERY ===== -->
     <div class="gallery">
       <img src="image/pcd.png" alt="Dashboard View 1" class="reveal">
       <img src="image/psa.png" alt="Dashboard View 2" class="reveal">
-<p style="color:#581C1C; text-align:center;">
-📊 Analyzed sales performance and product trends, providing actionable insights to optimize revenue, inventory, and product strategies.
-</p>
     </div>
-<div style="text-align:center; margin-top:100px;">
-  <a href="index.html" class="back-btn">← Back to Portflio</a>
-</div>
+
+    <p style="color:#581C1C; text-align:center; margin-top:25px;">
+      📊 Analyzed sales performance and product trends, providing actionable insights to optimize revenue, inventory, and product strategies.
+    </p>
   </div>
 
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+
   <script>
-    // === Scroll Animation Observer ===
     const reveals = document.querySelectorAll('.reveal, .gallery img, .container');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
       });
     }, { threshold: 0.1 });
-
     reveals.forEach(r => observer.observe(r));
   </script>
 </body>
 </html>
-
