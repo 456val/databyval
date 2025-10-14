@@ -1,12 +1,11 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Customer Sentiment Analysis | Valerie Kelechukwu</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
- 
+
   <style>
     body {
       margin: 0;
@@ -17,19 +16,9 @@
       overflow-x: hidden;
     }
 
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes glow { 0% { box-shadow: 0 0 0 rgba(255,182,193,0); } 50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); } 100% { box-shadow: 0 0 0 rgba(255,182,193,0); } }
 
-    @keyframes glow {
-      0% { box-shadow: 0 0 0 rgba(255,182,193,0); }
-      50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); }
-      100% { box-shadow: 0 0 0 rgba(255,182,193,0); }
-    }
-
-    /* ===== HERO SECTION ===== */
     .hero {
       background: #FCEDEA;
       display: flex;
@@ -58,10 +47,7 @@
       transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
 
-    .hero img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-    }
+    .hero img:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
 
     .hero h1 {
       font-size: 36px;
@@ -73,16 +59,6 @@
       animation-delay: 0.8s;
     }
 
-    .hero p {
-      font-size: 17px;
-      max-width: 700px;
-      color: #581C1C;
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 1.2s;
-    }
-
-    /* ===== CONTENT SECTION ===== */
     .container {
       max-width: 1100px;
       margin: 70px auto;
@@ -95,28 +71,11 @@
       transition: all 1s ease;
     }
 
-    .container.visible {
-      opacity: 1;
-      transform: translateY(0);
-      animation: glow 2.5s ease-in-out;
-    }
+    .container.visible { opacity: 1; transform: translateY(0); animation: glow 2.5s ease-in-out; }
 
-    h2 {
-      color: #800040;
-      margin-bottom: 15px;
-      font-size: 24px;
-    }
-
-    p, ul {
-      color: #333;
-      line-height: 1.7;
-      font-size: 15px;
-      text-align: justify;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
+    h2 { color: #800040; margin-bottom: 15px; font-size: 24px; }
+    p, ul { color: #333; line-height: 1.7; font-size: 15px; text-align: justify; }
+    li { margin-bottom: 8px; }
 
     .tools {
       margin-top: 25px;
@@ -129,12 +88,8 @@
       transition: background 0.3s ease, transform 0.3s ease;
     }
 
-    .tools:hover {
-      background-color: #ffd0db;
-      transform: scale(1.05);
-    }
+    .tools:hover { background-color: #ffd0db; transform: scale(1.05); }
 
-    /* ===== GALLERY SECTION ===== */
     .gallery {
       display: flex;
       justify-content: center;
@@ -153,25 +108,16 @@
       transform: translateY(50px);
     }
 
-    .gallery img.visible {
-      opacity: 1;
-      transform: translateY(0);
-      animation: fadeUp 1s ease forwards;
-    }
+    .gallery img.visible { opacity: 1; transform: translateY(0); animation: fadeUp 1s ease forwards; }
+    .gallery img:hover { transform: scale(1.04); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
 
-    .gallery img:hover {
-      transform: scale(1.04);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
+    @media (max-width: 900px) { .hero { height: auto; padding: 40px 20px; } .gallery img { width: 100%; } }
 
-    @media (max-width: 900px) {
-      .hero {
-        height: auto;
-        padding: 40px 20px;
-      }
-      .gallery img {
-        width: 100%;
-      }
+    .caption {
+      color: #581C1C;
+      text-align: center;
+      margin-top: 25px;
+      font-size: 15px;
     }
 
     .back-btn {
@@ -189,22 +135,18 @@
       z-index: 1000;
     }
 
-    .back-btn:hover {
-      background-color: #a00060;
-      transform: scale(1.05);
-    }
+    .back-btn:hover { background-color: #a00060; transform: scale(1.05); }
   </style>
 </head>
 <body>
 
-  <!-- ===== HERO SECTION ===== -->
+  <!-- HERO -->
   <section class="hero">
     <img src="image/british.png" alt="British Airways Sentiment Analysis">
     <h1>Customer Sentiment Analysis — British Airways Reviews</h1>
-    
   </section>
 
-  <!-- ===== CONTENT SECTION ===== -->
+  <!-- CONTENT -->
   <div class="container reveal">
     <h2>Project Overview</h2>
     <p>
@@ -213,47 +155,41 @@
 
     <h2>Key Insights</h2>
     <ul>
-      <li><b>Dominant Sentiment:</b> <b>Weak Positive</b> had the highest frequency, showing mild satisfaction among most passengers.</li>
-      <li><b>Second Highest:</b> <b>Weak Negative</b> followed, indicating moderate dissatisfaction related to delays and staff attitude.</li>
+      <li><b>Dominant Sentiment:</b> Weak Positive had the highest frequency, showing mild satisfaction among most passengers.</li>
+      <li><b>Second Highest:</b> Weak Negative followed, indicating moderate dissatisfaction related to delays and staff attitude.</li>
       <li><b>Strong Positive:</b> Represented highly satisfied travelers highlighting comfort, professionalism, and smooth operations.</li>
       <li><b>Neutral Reviews:</b> Reflected balanced opinions — passengers acknowledging both positive and negative experiences.</li>
       <li><b>Strong Negative:</b> Least frequent but critical, pointing to severe dissatisfaction from repeated issues or poor resolutions.</li>
-    </ul>
-      
     </ul>
 
     <div class="tools">
       🔧 Tools Used: Python | Pandas | TextBlob | NLTK | Seaborn | Matplotlib
     </div>
 
-    <!-- ===== IMAGE GALLERY ===== -->
+    <!-- GALLERY -->
     <div class="gallery">
       <img src="image/sentiment.png" alt="Sentiment Distribution Chart" class="reveal">
-      <p style="color:#581C1C; text-align:center;">
-📊 Revealed key passenger satisfaction drivers and critical pain points, providing 
-actionable insights to enhance the overall customer experience and guide strategic improvements in service quality.
-</p>
-
     </div>
 
-    <div style="text-align:center; margin-top:40px;">
-      <a href="index.html" class="back-btn">← Back to Portfolio</a>
-    </div>
+    <!-- CAPTION -->
+    <p class="caption">
+      📊 Revealed key passenger satisfaction drivers and critical pain points, providing actionable insights to enhance the overall customer experience and guide strategic improvements in service quality.
+    </p>
+
   </div>
 
+  <!-- BACK BUTTON -->
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+
   <script>
-    // === Scroll Animation Observer ===
     const reveals = document.querySelectorAll('.reveal, .gallery img, .container');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
       });
     }, { threshold: 0.1 });
-
     reveals.forEach(r => observer.observe(r));
   </script>
+
 </body>
 </html>
-
