@@ -14,7 +14,6 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
-
     @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes glow { 0% { box-shadow: 0 0 0 rgba(255,182,193,0); } 50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); } 100% { box-shadow: 0 0 0 rgba(255,182,193,0); } }
 
@@ -45,7 +44,6 @@
       animation-delay: 0.3s;
       transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
-
     .hero img:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
     .hero h1 { font-size: 36px; margin-bottom: 10px; color: #581C1C; text-shadow: 0 2px 4px rgba(0,0,0,0.25); opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 0.8s; }
 
@@ -60,10 +58,10 @@
       transform: translateY(50px);
       transition: all 1s ease;
     }
-
     .container.visible { opacity: 1; transform: translateY(0); animation: glow 2.5s ease-in-out; }
 
     h2 { color: #800040; margin-bottom: 15px; font-size: 24px; }
+    h3 { color: #800040; margin-top: 25px; margin-bottom: 15px; font-size: 22px; }
     p, ul { color: #333; line-height: 1.7; font-size: 15px; }
     li { margin-bottom: 8px; }
 
@@ -119,69 +117,69 @@
 </head>
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- Hero Section -->
   <section class="hero">
     <img src="image/pco.png" alt="Pharmaceutical Dashboard Main">
     <h1>Pharmaceutical Sales Performance Dashboard</h1>
   </section>
 
-  <!-- CONTENT SECTION -->
+  <!-- Main Project Detail -->
   <div class="container reveal">
-
-    <!-- PROJECT OVERVIEW -->
     <h2>Project Overview</h2>
     <p style="text-align:justify;">
-      This project analyzes pharmaceutical sales data to uncover hidden trends, optimize inventory, and support revenue growth. Over three months (July–September 2025), I examined 6,185 transactions spanning 970 products, totaling ₦52 million in revenue.
+      Over three months, I analyzed 6,185 transactions across 970 pharmaceutical products, generating ₦52 million in revenue.  
+      The company faced a key challenge: disorganized sales data made it difficult to identify high-performing products, optimize inventory, and guide marketing strategies.  
+
+      Using Power BI, I transformed messy transactional data into actionable insights, telling the story behind sales trends and highlighting opportunities for smarter business and operational decisions.
     </p>
 
-    <!-- DATA STORY -->
-    <h2>Data Story</h2>
-    <p style="text-align:justify;">
-      The company faced challenges interpreting fragmented and disorganized sales records. Key questions arose: Which products drive the most revenue? When should stock levels be adjusted? How can marketing efforts be optimized? By exploring transactional patterns, daily trends, and product performance, I transformed raw data into a compelling narrative that reveals what truly drives business growth.
-    </p>
-
-    <!-- PAIN POINTS & GOALS -->
-    <h2>Pain Points & Goals</h2>
-    <p style="text-align:justify;">
-      <strong>Pain Points:</strong> Dispersed and inconsistent sales data, unclassified product categories, and limited visibility into daily and weekly revenue trends.<br>
-      <strong>Goals:</strong> Build a data-driven dashboard to identify high-performing products, pinpoint peak revenue periods, and provide actionable insights for inventory planning and marketing strategies.
-    </p>
-
-    <!-- METHODOLOGY -->
-    <h2>Methodology</h2>
-    <p style="text-align:justify;">
-      The approach included data cleaning and preprocessing, exploratory data analysis to detect patterns and anomalies, and visualization using Power BI. Interactive dashboards were created to display revenue by product categories, time periods, and transaction patterns for easy interpretation by leadership.
-    </p>
-
-    <!-- OUTCOME & INSIGHTS -->
-    <h2>Outcomes & Insights</h2>
+    <h3>Methodology</h3>
     <ul>
-      <li><b>Weekday Revenue Dominance:</b> 75.89% of revenue occurred on weekdays, indicating strong business day engagement.</li>
-      <li><b>Revenue Peaks:</b> Peak revenue reached ₦2.7M, highlighting seasonal and promotional opportunities.</li>
-      <li><b>Top Categories:</b> Pharmaceuticals, Antibiotics, and Analgesics led sales; 546 products in “Others” suggest reclassification potential.</li>
-      <li><b>Transaction Patterns:</b> Daily variations offer insights for inventory, staffing, and promotions planning.</li>
+      <li>Cleaned and structured sales transactions to remove inconsistencies and errors.</li>
+      <li>Analyzed revenue trends over time to identify peak periods and slow seasons.</li>
+      <li>Explored category performance to highlight top-selling products and identify underperforming segments.</li>
+      <li>Visualized weekday, weekend, and time-of-day patterns to guide operational decisions.</li>
+      <li>Built interactive dashboards for executives to explore trends and make data-driven decisions.</li>
     </ul>
 
-    <!-- RECOMMENDATIONS -->
-    <h2>Recommendations</h2>
-    <p style="text-align:justify;">
-      Adjust inventory to align with peak days, reclassify products in the “Others” category for better tracking, and focus marketing campaigns on top-performing segments. These actions empower the company to maximize revenue, optimize operations, and sustain growth.
+    <h3>Outcome</h3>
+    <p>
+      The analysis uncovered actionable insights:  
+      - Peak revenue occurred on weekdays, guiding marketing and staffing schedules.  
+      - Pharmaceuticals, Antibiotics, and Analgesics were top performers; the "Others" category suggested potential reclassification.  
+      - Daily transaction patterns informed inventory planning and resource allocation.  
+
+      Overall, the dashboard empowered executives to make informed decisions and maximize revenue.
     </p>
 
-    <!-- TOOLS -->
     <div class="tools">
-      🔧 Tools Used: Power BI
-      <p style="color:#581C1C;">Project Details: <a href="https://github.com/456Val/Pharmaceutical-Sales-Analytics" style="color:#581C1C;">GitHub Link</a></p>
+      🔧 Tool Used: Power BI
+      <p style="color:#581C1C;">Detailed Project: <a href="https://github.com/456Val/Pharmaceutical-Sales-Analytics" style="color:#581C1C;">Project Link</a></p>
     </div>
 
-    <!-- IMAGE GALLERY -->
+    <h3>Key Insights</h3>
+    <ul>
+      <li><b>Weekday Revenue Dominance:</b> 75.89% of revenue occurred on weekdays, showing stronger engagement during business days.</li>
+      <li><b>Revenue Trends:</b> Peaks reached ₦2.7M, reflecting seasonal or promotional effects.</li>
+      <li><b>Category Breakdown:</b> Pharmaceuticals, Antibiotics, and Analgesics led performance; 546 products in “Others” suggest potential reclassification.</li>
+      <li><b>Transaction Patterns:</b> Daily transaction variation offered insight for staffing and inventory optimization.</li>
+    </ul>
+
+    <h3>Visual Highlights</h3>
     <div class="gallery">
       <img src="image/pcd.png" alt="Dashboard View 1" class="reveal">
       <img src="image/psa.png" alt="Dashboard View 2" class="reveal">
     </div>
 
+    <h3>Recommendations</h3>
+    <ul>
+      <li>📦 <b>Optimize Inventory:</b> Adjust stock levels according to daily and category trends to prevent overstocking or stockouts.</li>
+      <li>📊 <b>Focus Marketing:</b> Target high-performing categories and peak weekdays for campaigns to maximize ROI.</li>
+      <li>🔄 <b>Reclassify Products:</b> Review "Others" category products for potential promotion or reorganization to improve reporting clarity.</li>
+    </ul>
+
     <p style="color:#581C1C; text-align:center; margin-top:25px;">
-      📊 Delivered actionable insights enabling optimized inventory, targeted marketing, and enhanced product strategies for sustained revenue growth.
+      📊 This project demonstrates how structured analysis and Power BI storytelling can turn raw pharmaceutical sales data into actionable business insights, driving revenue growth and operational efficiency.
     </p>
   </div>
 
