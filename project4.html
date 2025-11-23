@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Customer Sentiment Analysis | Valerie Kelechukwu</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
   <style>
     body {
       margin: 0;
@@ -19,6 +18,7 @@
     @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes glow { 0% { box-shadow: 0 0 0 rgba(255,182,193,0); } 50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); } 100% { box-shadow: 0 0 0 rgba(255,182,193,0); } }
 
+    /* Hero Section */
     .hero {
       background: #FCEDEA;
       display: flex;
@@ -33,32 +33,21 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
       animation: fadeUp 1s ease-out;
     }
-
     .hero img {
       width: 100%;
       max-width: 900px;
       border-radius: 20px;
       margin-bottom: 25px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      transform: translateY(10px);
       opacity: 0;
       animation: fadeUp 1.2s ease forwards;
       animation-delay: 0.3s;
       transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
-
     .hero img:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+    .hero h1 { font-size: 36px; color: #581C1C; text-shadow: 0 2px 4px rgba(0,0,0,0.25); opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 0.8s; }
 
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-      color: #581C1C;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 0.8s;
-    }
-
+    /* Main Container */
     .container {
       max-width: 1100px;
       margin: 70px auto;
@@ -70,26 +59,42 @@
       transform: translateY(50px);
       transition: all 1s ease;
     }
-
     .container.visible { opacity: 1; transform: translateY(0); animation: glow 2.5s ease-in-out; }
 
     h2 { color: #800040; margin-bottom: 15px; font-size: 24px; }
-    p, ul { color: #333; line-height: 1.7; font-size: 15px; text-align: justify; }
+    p, ul { color: #333; line-height: 1.7; font-size: 15px; }
     li { margin-bottom: 8px; }
 
+    /* Cards for Insights & Recommendations */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+    .card {
+      background: #FCEDEA;
+      border-left: 6px solid #A05252;
+      border-radius: 12px;
+      padding: 25px 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+    .card h4 { color: #581C1C; margin-bottom: 10px; font-size: 1.1rem; }
+
+    /* Tools Section */
     .tools {
       margin-top: 25px;
-      background-color: #ffe6eb;
+      background-color: #581C1C;
       padding: 12px 16px;
       border-radius: 10px;
       display: inline-block;
       font-weight: 500;
-      color: #800040;
+      color: white;
       transition: background 0.3s ease, transform 0.3s ease;
     }
 
-    .tools:hover { background-color: #ffd0db; transform: scale(1.05); }
-
+    /* Gallery */
     .gallery {
       display: flex;
       justify-content: center;
@@ -97,7 +102,6 @@
       flex-wrap: wrap;
       margin-top: 40px;
     }
-
     .gallery img {
       width: 480px;
       height: auto;
@@ -107,18 +111,10 @@
       opacity: 0;
       transform: translateY(50px);
     }
-
     .gallery img.visible { opacity: 1; transform: translateY(0); animation: fadeUp 1s ease forwards; }
     .gallery img:hover { transform: scale(1.04); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
 
     @media (max-width: 900px) { .hero { height: auto; padding: 40px 20px; } .gallery img { width: 100%; } }
-
-    .caption {
-      color: #581C1C;
-      text-align: center;
-      margin-top: 25px;
-      font-size: 15px;
-    }
 
     .back-btn {
       position: fixed;
@@ -134,7 +130,6 @@
       transition: background 0.3s ease, transform 0.3s ease;
       z-index: 1000;
     }
-
     .back-btn:hover { background-color: #a00060; transform: scale(1.05); }
   </style>
 </head>
@@ -143,57 +138,105 @@
   <!-- HERO -->
   <section class="hero">
     <img src="image/british.png" alt="British Airways Sentiment Analysis">
-    <h1>Customer Sentiment Analysis — British Airways Reviews</h1>
+    <h1>British Airways Passenger Sentiment Analysis</h1>
   </section>
 
-  <!-- CONTENT -->
+  <!-- MAIN CONTENT -->
   <div class="container reveal">
+
+    <!-- Project Overview -->
     <h2>Project Overview</h2>
     <p style="text-align:justify;">
-      Every review tells a story, and this project set out to uncover what British Airways passengers are really feeling. Using Natural Language Processing (NLP) to classify sentiment, I analyzed feedback to reveal positive, neutral, and negative trends—highlighting key factors shaping customer experience and offering actionable insights into the airline’s brand perception.
+      Every review tells a story. This project explores how British Airways passengers truly feel about their flight experiences.
+      By applying Natural Language Processing (NLP) to passenger reviews, sentiments are classified, emotional patterns uncovered, 
+      and key causes of satisfaction and frustration identified.
     </p>
 
-    <h2>Key Insights</h2>
+    <!-- Methodology -->
+    <h2>Methodology</h2>
     <ul>
-      <li><b>Dominant Sentiment:</b> Weak Positive had the highest frequency, showing mild satisfaction among most passengers.</li>
-      <li><b>Second Highest:</b> Weak Negative followed, indicating moderate dissatisfaction related to delays and staff attitude.</li>
-      <li><b>Strong Positive:</b> Represented highly satisfied travelers highlighting comfort, professionalism, and smooth operations.</li>
-      <li><b>Neutral Reviews:</b> Reflected balanced opinions — passengers acknowledging both positive and negative experiences.</li>
-      <li><b>Strong Negative:</b> Least frequent but critical, pointing to severe dissatisfaction from repeated issues or poor resolutions.</li>
+      <li><b>Sentiment Analysis:</b> Classified reviews into positive, neutral, and negative sentiments using Python and NLP libraries.</li>
+      <li><b>Review Length Analysis:</b> Explored how word count relates to emotional intensity.</li>
+      <li><b>Word Cloud & Frequency Analysis:</b> Identified top words in positive and negative reviews to understand key drivers of satisfaction or frustration.</li>
+      <li><b>Interruption Impact:</b> Examined reviews mentioning flight delays or cancellations to assess emotional response.</li>
+      <li><b>Customer Service & Cause Analysis:</b> Investigated how staff behavior, weather, technical, and crew issues affect sentiment.</li>
     </ul>
 
-    <div class="tools">
-      🔧 Tools Used: Python | Pandas | TextBlob | NLTK | Seaborn | Matplotlib
-       <p style="color:#581C1C;">Detailed Project: <a href="https://github.com/456Val/Customer-Sentiment-Analysis" style="color:#581C1C;"> Project Link</a></p>
+    <!-- Key Insights -->
+    <h2><center>Key Insights</center></h2>
+    <div class="card-grid">
+      <div class="card">
+        <h4>📊 Sentiment Intensity Distribution</h4>
+        <p>Most reviews are neutral or moderately emotional. Passengers show steady but limited extreme opinions, indicating service consistency but few “wow” experiences.</p>
+      </div>
+      <div class="card">
+        <h4>✏️ Review Length vs Sentiment</h4>
+        <p>Moderate reviews (weak positive/negative) are longer, providing richer feedback. Strongly emotional reviews tend to be shorter and more direct.</p>
+      </div>
+      <div class="card">
+        <h4>☑️ Word Cloud Analysis</h4>
+        <p>Positive reviews praise comfort, staff, and punctuality; negative reviews highlight delays, seating discomfort, and check-in frustrations.</p>
+      </div>
+      <div class="card">
+        <h4>⏱️ Interruptions Impact</h4>
+        <p>Customer satisfaction during delays depends more on service handling than the interruption itself. Good staff responses can mitigate negative sentiment.</p>
+      </div>
+      <div class="card">
+        <h4>💬 Customer Service Mentions</h4>
+        <p>Helpful and professional staff boost sentiment (~0.20), while indifferent behavior drives negative reactions (~-0.32).</p>
+      </div>
+      <div class="card">
+        <h4>⚡ Causes of Delays</h4>
+        <p>Crew-related issues dominate, followed by weather and technical problems. Improving communication and crew management can enhance passenger satisfaction.</p>
+      </div>
     </div>
 
-    <!-- GALLERY -->
+    <!-- Recommendations -->
+    <h2><center>Recommendations</center></h2>
+    <div class="card-grid">
+      <div class="card">
+        <h4>👨‍✈️ Enhance Staff Responsiveness</h4>
+        <p>Invest in customer service training to ensure professional, empathetic responses during disruptions.</p>
+      </div>
+      <div class="card">
+        <h4>📢 Improve Communication</h4>
+        <p>Provide timely, transparent updates during delays or cancellations to manage passenger expectations and reduce frustration.</p>
+      </div>
+      <div class="card">
+        <h4>🕒 Optimize Operations</h4>
+        <p>Address crew-related delays and ensure punctuality to elevate overall passenger satisfaction.</p>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <h2>Tools Used</h2>
+    <div class="tools">
+      Python | Pandas | NLTK | TextBlob | Seaborn | Matplotlib
+      <p style="color:#fff;">Detailed Project: <a href="https://github.com/456Val/Customer-Sentiment-Analysis" style="color:#FFD0DB;"> Project Link</a></p>
+    </div>
+
+    <!-- Gallery -->
     <div class="gallery">
       <img src="image/sentiment.png" alt="Sentiment Distribution Chart" class="reveal">
+      <img src="image/wordcloud.png" alt="Word Cloud Analysis" class="reveal">
     </div>
 
-    <!-- CAPTION -->
-    <p class="caption">
-      📊 Revealed key passenger satisfaction drivers and critical pain points, providing actionable insights to enhance the overall customer experience and guide strategic improvements in service quality.
-    </p>
+    <p style="text-align:center; margin-top:50px; font-style:italic; color:#581C1C;">
+✨ British Airways maintains service consistency, but improving staff responsiveness, transparency, and operational punctuality can elevate overall customer satisfaction.
+</p>
 
   </div>
 
-  <!-- BACK BUTTON -->
+  <!-- Back Button -->
   <a href="index.html" class="back-btn">← Back to Portfolio</a>
 
   <script>
     const reveals = document.querySelectorAll('.reveal, .gallery img, .container');
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     reveals.forEach(r => observer.observe(r));
   </script>
 
 </body>
 </html>
-
-
-
