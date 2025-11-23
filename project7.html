@@ -15,17 +15,10 @@
       overflow-x: hidden;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes glow { 0% { box-shadow: 0 0 0 rgba(255,182,193,0); } 50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); } 100% { box-shadow: 0 0 0 rgba(255,182,193,0); } }
 
-    @keyframes glow {
-      0% { box-shadow: 0 0 0 rgba(255,182,193,0); }
-      50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); }
-      100% { box-shadow: 0 0 0 rgba(255,182,193,0); }
-    }
-
+    /* Hero Section */
     .hero {
       background: #FCEDEA;
       display: flex;
@@ -40,7 +33,6 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
       animation: fadeUp 1s ease-out;
     }
-
     .hero img {
       width: 100%;
       max-width: 900px;
@@ -52,21 +44,10 @@
       animation-delay: 0.3s;
       transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
+    .hero img:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+    .hero h1 { font-size: 36px; color: #581C1C; text-shadow: 0 2px 4px rgba(0,0,0,0.25); opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 0.8s; }
 
-    .hero img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      color: #581C1C;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 0.8s;
-    }
-
+    /* Main Container */
     .container {
       max-width: 1100px;
       margin: 70px auto;
@@ -78,27 +59,43 @@
       transform: translateY(50px);
       transition: all 1s ease;
     }
+    .container.visible { opacity: 1; transform: translateY(0); animation: glow 2.5s ease-in-out; }
 
-    .container.visible {
-      opacity: 1;
-      transform: translateY(0);
-      animation: glow 2.5s ease-in-out;
-    }
-
-    h2 {
-      color: #800040;
-      margin-bottom: 15px;
-      font-size: 24px;
-    }
-
-    p, ul {
-      color: #333;
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
+    h2 { color: #800040; margin-bottom: 15px; font-size: 24px; }
+    p, ul { color: #333; line-height: 1.7; font-size: 15px; }
     li { margin-bottom: 8px; }
 
+    /* Cards for Insights & Recommendations */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+    .card {
+      background: #FCEDEA;
+      border-left: 6px solid #A05252;
+      border-radius: 12px;
+      padding: 25px 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+    .card h4 { color: #581C1C; margin-bottom: 10px; font-size: 1.1rem; }
+
+    /* Tools Section */
+    .tools {
+      margin-top: 25px;
+      background-color: #581C1C;
+      padding: 12px 16px;
+      border-radius: 10px;
+      display: inline-block;
+      font-weight: 500;
+      color: white;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .tools:hover { background-color: #a00060; transform: scale(1.05); }
+
+    /* Gallery */
     .gallery {
       display: flex;
       justify-content: center;
@@ -106,7 +103,6 @@
       flex-wrap: wrap;
       margin-top: 40px;
     }
-
     .gallery img {
       width: 480px;
       height: auto;
@@ -116,22 +112,10 @@
       opacity: 0;
       transform: translateY(50px);
     }
+    .gallery img.visible { opacity: 1; transform: translateY(0); animation: fadeUp 1s ease forwards; }
+    .gallery img:hover { transform: scale(1.04); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
 
-    .gallery img.visible {
-      opacity: 1;
-      transform: translateY(0);
-      animation: fadeUp 1s ease forwards;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.04);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
-
-    @media (max-width: 900px) {
-      .hero { height: auto; padding: 40px 20px; }
-      .gallery img { width: 100%; }
-    }
+    @media (max-width: 900px) { .hero { height: auto; padding: 40px 20px; } .gallery img { width: 100%; } }
 
     .back-btn {
       position: fixed;
@@ -147,67 +131,96 @@
       transition: background 0.3s ease, transform 0.3s ease;
       z-index: 1000;
     }
-
-    .back-btn:hover {
-      background-color: #a00060;
-      transform: scale(1.05);
-    }
+    .back-btn:hover { background-color: #a00060; transform: scale(1.05); }
   </style>
 </head>
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="hero">
     <img src="image/dashboard5.png" alt="Personal Finance Insights Dashboard">
     <h1>Personal Finance Insights Dashboard (ETL + SQL + Power BI)</h1>
   </section>
 
-  <!-- CONTENT SECTION -->
+  <!-- MAIN CONTENT -->
   <div class="container reveal">
+
+    <!-- Project Overview -->
     <h2>🧾 Project Overview</h2>
     <p style="text-align:justify;">
-      This project focuses on developing an interactive <b>Personal Finance Insights Dashboard</b> that visualizes and analyzes daily income and spending patterns. 
-      The process began with raw transaction data that required cleaning, enrichment, and transformation before being modeled for analytics. 
-      The goal was to connect all stages of the data pipeline — from <b>data collection to visualization</b> — providing real-time financial insights.
+      Personal finance can be overwhelming without clear insights. This project walks through the journey of transforming raw personal transaction data into a fully interactive dashboard. 
+      By cleaning, enriching, and modeling the data, I connected all stages of the pipeline — from collection to SQL storage, then Power BI visualization — to provide a clear, real-time view of income and expenses. 
+      Every visualization tells a story about spending habits, cash flow patterns, and opportunities for financial optimization.
     </p>
 
-    <h2>Purpose</h2>
-    <p style="text-align:justify">
-     This project focuses on building an interactive Personal Finance Insights Dashboard to visualize and analyze daily income and spending patterns. Starting with raw transaction data, I cleaned and enriched it, then loaded it into a SQL database using Python. By connecting Power BI to the SQL Server database, I transformed the data into interactive visualizations, creating a seamless pipeline from data collection to dashboard presentation. The result is a dynamic tool that provides real-time financial insights and actionable takeaways for personal finance management.
-    </p>
-
-    <h2>Objectives</h2>
+    <!-- Methodology -->
+    <h2>⚙️ Methodology</h2>
     <ul>
-      <li>Clean and prepare raw transaction data for analysis.</li>
-      <li>Describe and categorize each transaction for clarity and accuracy.</li>
-      <li>Ingest structured data into a SQL database for storage and querying.</li>
-      <li>Design an interactive Power BI dashboard that visualizes key metrics like inflow, outflow, and balance trends.</li>
-      <li>Integrate all workflow stages — <b>Excel → Python → SQL → Power BI</b>.</li>
+      <li><b>Data Cleaning (Excel):</b> Removed duplicates, handled missing values, and standardized categories for consistency.</li>
+      <li><b>Data Transformation (Python/Pandas):</b> Categorized transactions, computed balances, formatted dates and amounts, and ingested into SQL.</li>
+      <li><b>Database Management (SQL):</b> Created relational schema and aggregated data for efficient querying.</li>
+      <li><b>Visualization (Power BI):</b> Designed dashboards showing inflow vs. outflow, balance trends, and spending patterns.</li>
     </ul>
 
-    <h2>Process and Tools Used</h2>
-    <ul>
-      <li><b>Excel – Data Cleaning:</b> Handled missing values, removed duplicates, and standardized categories to ensure integrity.</li>
-      <li><b>Python (Pandas):</b> Transformed and categorized transactions, formatted dates and amounts, computed balances, and ingested data into SQL using connectivity libraries.</li>
-      <li><b>SQL Database:</b> Created relational schema, aggregated and summarized data for Power BI.</li>
-      <li><b>Power BI:</b> Connected to SQL for dynamic visualizations showing inflow vs. outflow, balance trends, and expense categories.</li>
-    </ul>
-     <p>Detailed Project: <a href="https://github.com/456Val/FinanceManagement" style="color:#581C1C;"> Project Link</a></p>
+    <!-- Key Insights -->
+    <h2>💡 Key Insights</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h4>📊 Income vs Expense Trends</h4>
+        <p>Monthly inflow and outflow variations revealed periods of overspending and saving opportunities.</p>
+      </div>
+      <div class="card">
+        <h4>💰 Expense Categorization</h4>
+        <p>Top spending areas were identified (food, transport, utilities), helping focus on optimization.</p>
+      </div>
+      <div class="card">
+        <h4>📈 Balance Monitoring</h4>
+        <p>Real-time balance tracking provided daily and monthly visibility, enhancing cash flow control.</p>
+      </div>
+      <div class="card">
+        <h4>✅ Spending Efficiency</h4>
+        <p>Visualization of patterns helped detect unnecessary expenses and improve budgeting decisions.</p>
+      </div>
+    </div>
 
+    <!-- Recommendations -->
+    <h2>📝 Recommendations</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h4>⏰ Monitor Peak Spending Periods</h4>
+        <p>Analyze patterns to anticipate high-spending periods and plan budgets accordingly.</p>
+      </div>
+      <div class="card">
+        <h4>💡 Optimize Expense Categories</h4>
+        <p>Focus on reducing costs in high-spend categories like food and transport to improve savings.</p>
+      </div>
+      <div class="card">
+        <h4>📊 Leverage Dashboard for Decision-Making</h4>
+        <p>Use real-time insights to guide daily spending, adjust savings strategies, and plan future financial goals.</p>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <h2>🔧 Tools Used</h2>
+    <div class="tools">
+      Excel | Python (Pandas) | SQL | Power BI
+      <p style="color:#fff;">Detailed Project: <a href="https://github.com/456Val/FinanceManagement" style="color:#FFD0DB;"> Project Link</a></p>
+    </div>
+
+    <!-- Gallery -->
     <div class="gallery">
       <img src="image/bank1.png" alt="Transaction Data Cleaning" class="reveal">
       <img src="image/bank2.png" alt="Power BI Dashboard" class="reveal">
     </div>
 
     <p style="text-align:center; margin-top:50px; font-style:italic; color:#581C1C;">
-✨ Transforming your personal account data into clear insights to help track spending, manage finances, and make informed decisions.
+✨ Transforming personal account data into clear insights for better financial management.
 </p>
 
-
-    <div style="text-align:center; margin-top:40px;">
-      <a href="index.html" class="back-btn">← Back to Portfolio</a>
-    </div>
   </div>
+
+  <!-- Back Button -->
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
 
   <script>
     const reveals = document.querySelectorAll('.reveal, .gallery img, .container');
@@ -221,8 +234,3 @@
 
 </body>
 </html>
-
-
-
-
-
