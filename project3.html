@@ -1,355 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pharmaceutical Sales Analytics | Valerie Kelechukwu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharmaceutical Sales Analytics | Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #581C1C;
-      color: #4B002E;<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pharmaceutical Sales Analytics | Valerie Kelechukwu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #581C1C;
-      color: #4B002E;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
+    /* Hero Section */
+    .project-hero {
+      background: linear-gradient(135deg, #581C1C, #A05252);
+      color: #FCEDEA;
+      text-align: center;
+      padding: 140px 20px 100px;
     }
 
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes glow { 0% { box-shadow: 0 0 0 rgba(255,182,193,0); } 50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); } 100% { box-shadow: 0 0 0 rgba(255,182,193,0); } }
+    .project-hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
 
-    .hero {
+    .project-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Project Detail */
+    .project-detail {
+      max-width: 1100px;
+      margin: -60px auto 100px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      padding: 60px 40px;
+      position: relative;
+      z-index: 5;
+      color: #3D0C02;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #581C1C;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+
+    .overview {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .overview strong {
+      color: #A05252;
+    }
+
+    /* Insight Cards */
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+
+    .insight-card {
       background: #FCEDEA;
+      border-left: 6px solid #A05252;
+      border-radius: 12px;
+      padding: 25px 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .insight-card h4 {
+      color: #581C1C;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    /* Visual Grid */
+    .visuals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 50px;
+      margin: 50px 0;
+    }
+
+    .visual {
+      background-color: #FCEDEA;
+      border-radius: 12px;
+      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      padding: 60px 20px;
-      height: 70vh;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-      animation: fadeUp 1s ease-out;
-    }
-
-    .hero img {
-      width: 100%;
-      max-width: 900px;
-      border-radius: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      transform: translateY(10px);
-      opacity: 0;
-      animation: fadeUp 1.2s ease forwards;
-      animation-delay: 0.3s;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-    }
-
-    .hero img:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
-    .hero h1 { font-size: 36px; margin-bottom: 10px; color: #581C1C; text-shadow: 0 2px 4px rgba(0,0,0,0.25); opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 0.8s; }
-
-    .container {
-      max-width: 1100px;
-      margin: 70px auto;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      padding: 50px;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 1s ease;
-    }
-
-    .container.visible { opacity: 1; transform: translateY(0); animation: glow 2.5s ease-in-out; }
-
-    h2 { color: #800040; margin-bottom: 15px; font-size: 24px; }
-    p, ul { color: #333; line-height: 1.7; font-size: 15px; }
-    li { margin-bottom: 8px; }
-
-    .tools {
-      margin-top: 25px;
-      background-color: #ffe6eb;
-      padding: 12px 16px;
-      border-radius: 10px;
-      display: inline-block;
-      font-weight: 500;
-      color: #800040;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    .tools:hover { background-color: #ffd0db; transform: scale(1.05); }
-
-    .gallery {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-    .gallery img {
-      width: 480px;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    .gallery img.visible { opacity: 1; transform: translateY(0); animation: fadeUp 1s ease forwards; }
-    .gallery img:hover { transform: scale(1.04); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
-
-    @media (max-width: 900px) { .hero { height: auto; padding: 40px 20px; } .gallery img { width: 100%; } }
-
-    .back-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      padding: 12px 25px;
-      background-color: #581C1C;
-      color: #fff;
+      color: #A05252;
       font-weight: 600;
-      text-decoration: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: background 0.3s ease, transform 0.3s ease;
-      z-index: 1000;
+      font-size: 1.05rem;
+      transition: 0.3s ease;
     }
-    .back-btn:hover { background-color: #a00060; transform: scale(1.05); }
+
+    .visual:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Summary */
+    .summary {
+      margin-top: 40px;
+      text-align: center;
+      font-style: italic;
+      color: #3D0C02;
+    }
+
+    /* Back Button */
+    .btn-back {
+      display: inline-block;
+      margin-top: 50px;
+      background: #581C1C;
+      color: #fff;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background: #732626;
+    }
   </style>
 </head>
 <body>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <img src="image/pco.png" alt="Pharmaceutical Dashboard Main">
-    <h1>Pharmaceutical Sales Performance Dashboard</h1>
+  <!-- Hero Section -->
+  <section class="project-hero">
+    <h1>💊 Pharmaceutical Sales Analytics</h1>
+    <p>Data-driven insights to optimize revenue, inventory, and product strategies for a pharmaceutical company</p>
   </section>
 
-  <!-- CONTENT SECTION -->
-  <div class="container reveal">
-    <h2>Project Overview</h2>
-    <p style="text-align:justify;">
-      Managing pharmaceutical sales data across hundreds of products is complex, and insights are often buried within fragmented information. For this company, I analyzed 6,185 transactions spanning 970 products over three months (July–September 2025), totaling ₦52 million in revenue.  
+  <!-- Main Project Detail -->
+  <div class="project-detail">
+    <div class="overview">
+      <p><strong>Tool Used:</strong> Power BI</p>
+      <p style="color:#581C1C;">Project Repository:<a href="https://github.com/456Val/Pharmaceutical-Sales-Analytics" style="color:#581C1C;"> GitHub Link</a></p>
 
-      <strong>Challenge:</strong> Disorganized and unstructured sales data made it difficult to identify high-performing products, optimal inventory levels, and effective marketing strategies. Leadership needed a data-driven solution to improve decision-making and revenue performance.  
+      <!-- Project Overview Section -->
+      <h3 class="section-title">Project Overview</h3>
+      <p>
+        Over three months, I analyzed 6,185 transactions across 970 pharmaceutical products, totaling ₦52 million in revenue.  
+        The company faced a key challenge: disorganized sales data made it difficult to identify high-performing products, optimize inventory, and inform marketing strategies.  
 
-      <strong>Methodology:</strong> I conducted data cleaning and preprocessing, performed exploratory analysis to detect trends and anomalies, and created interactive dashboards using Power BI. This included visualizing revenue by category, time periods, and transaction patterns, enabling quick interpretation for strategic planning.  
+        This project transformed messy transactional data into actionable insights, telling the story behind sales trends and highlighting opportunities for smarter business decisions and operational efficiency.
+      </p>
 
-      <strong>Outcome & Recommendations:</strong> The dashboard highlighted peak revenue periods, high-performing product categories, and daily transaction patterns. Recommendations included adjusting inventory for peak days, reclassifying “Others” product category, and focusing marketing campaigns on top-performing segments—providing the company with actionable strategies to maximize revenue and operational efficiency.
-    </p>
+      <!-- Methodology Section -->
+      <h3 class="section-title">Methodology</h3>
+      <p>
+        Using Power BI, I applied a structured approach:
+      </p>
+      <ul>
+        <li>Cleaned and organized sales transactions to remove inconsistencies and errors.</li>
+        <li>Analyzed revenue trends over time to identify peak periods and slow seasons.</li>
+        <li>Explored category performance to highlight top-selling products and identify underperforming segments.</li>
+        <li>Visualized weekday, weekend, and time-of-day patterns to guide operational decisions.</li>
+        <li>Built interactive dashboards for executives to explore trends and make data-driven decisions.</li>
+      </ul>
 
-    <h2>Key Insights</h2>
-    <ul>
-      <li><b>Weekday Revenue Dominance:</b> 75.89% of revenue occurred on weekdays, showing strong engagement during business days.</li>
-      <li><b>Revenue Peaks:</b> Peak revenue reached ₦2.7M, indicating seasonal and promotional opportunities.</li>
-      <li><b>Top Categories:</b> Pharmaceuticals, Antibiotics, and Analgesics were top performers; 546 products in “Others” suggest reclassification potential.</li>
-      <li><b>Transaction Patterns:</b> Daily variations provide insights for inventory planning, staffing, and promotional scheduling.</li>
-    </ul>
+      <!-- Outcome Section -->
+      <h3 class="section-title">Outcome</h3>
+      <p>
+        The analysis uncovered actionable insights that supported strategic decisions:  
+        - Peak revenue occurred on weekdays, guiding marketing and staffing schedules.  
+        - Pharmaceuticals, Antibiotics, and Analgesics were the top performers; the “Others” category suggested potential reclassification.  
+        - Daily transaction patterns informed inventory planning and resource allocation.  
+        Overall, the dashboard empowered executives to make informed decisions and maximize revenue.
+      </p>
 
-    <div class="tools">
-      🔧 Tools Used: Power BI
-      <p style="color:#581C1C;">Project Details: <a href="https://github.com/456Val/Pharmaceutical-Sales-Analytics" style="color:#581C1C;">GitHub Link</a></p>
+      <!-- Visual Highlights -->
+      <h3 class="section-title">Visual Highlights</h3>
+      <div class="visuals-grid">
+        <div class="visual"><img src="image/pcd.png" width="1000px" height="200px" alt="Revenue Trends"></div>
+        <div class="visual"><img src="image/psa.png" width="1000px" height="200px" alt="Category Performance"></div>
+      </div>
+
+      <!-- Key Insights -->
+      <h3 class="section-title">Key Insights</h3>
+      <div class="insights-grid">
+        <div class="insight-card">
+          <h4>📅 Weekday Revenue</h4>
+          <p>75.89% of revenue occurred on weekdays, showing strong business-day engagement.</p>
+        </div>
+        <div class="insight-card">
+          <h4>💊 Category Performance</h4>
+          <p>Top categories: Pharmaceuticals, Antibiotics, Analgesics; 546 products in "Others" suggested potential reclassification.</p>
+        </div>
+        <div class="insight-card">
+          <h4>📈 Revenue Trends</h4>
+          <p>Peak daily revenue reached ₦2.7M, reflecting seasonal or promotional effects.</p>
+        </div>
+        <div class="insight-card">
+          <h4>🕒 Transaction Patterns</h4>
+          <p>Daily sales variation informed inventory optimization and staffing decisions.</p>
+        </div>
+      </div>
+
+      <!-- Recommendations -->
+      <h3 class="section-title">Recommendations</h3>
+      <div class="insights-grid">
+        <div class="insight-card">
+          <h4>📦 Optimize Inventory</h4>
+          <p>Adjust stock levels according to daily and category trends to prevent overstocking or stockouts.</p>
+        </div>
+        <div class="insight-card">
+          <h4>📊 Focus Marketing</h4>
+          <p>Target high-performing categories and peak weekdays for campaigns to maximize ROI.</p>
+        </div>
+        <div class="insight-card">
+          <h4>🔄 Reclassify Products</h4>
+          <p>Review "Others" category products for potential promotion or reorganization to improve clarity in reporting.</p>
+        </div>
+      </div>
+
+      <p class="summary">
+        This project demonstrates how structured analysis and Power BI visual storytelling can turn raw pharmaceutical sales data into actionable business insights, driving revenue growth and operational efficiency.
+      </p>
+
+      <div style="text-align:center;">
+        <a href="index.html" class="btn-back">← Back to Portfolio</a>
+      </div>
     </div>
-
-    <!-- IMAGE GALLERY -->
-    <div class="gallery">
-      <img src="image/pcd.png" alt="Dashboard View 1" class="reveal">
-      <img src="image/psa.png" alt="Dashboard View 2" class="reveal">
-    </div>
-
-    <p style="color:#581C1C; text-align:center; margin-top:25px;">
-      📊 Delivered actionable insights enabling the company to optimize inventory, target marketing efforts, and enhance product strategies for sustained revenue growth.
-    </p>
   </div>
-
-  <a href="index.html" class="back-btn">← Back to Portfolio</a>
-
-  <script>
-    const reveals = document.querySelectorAll('.reveal, .gallery img, .container');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(r => observer.observe(r));
-  </script>
 </body>
 </html>
-
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes glow { 0% { box-shadow: 0 0 0 rgba(255,182,193,0); } 50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); } 100% { box-shadow: 0 0 0 rgba(255,182,193,0); } }
-
-    .hero {
-      background: #FCEDEA;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      padding: 60px 20px;
-      height: 70vh;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-      animation: fadeUp 1s ease-out;
-    }
-
-    .hero img {
-      width: 100%;
-      max-width: 900px;
-      border-radius: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      transform: translateY(10px);
-      opacity: 0;
-      animation: fadeUp 1.2s ease forwards;
-      animation-delay: 0.3s;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-    }
-
-    .hero img:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
-    .hero h1 { font-size: 36px; margin-bottom: 10px; color: #581C1C; text-shadow: 0 2px 4px rgba(0,0,0,0.25); opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 0.8s; }
-
-    .container {
-      max-width: 1100px;
-      margin: 70px auto;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      padding: 50px;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 1s ease;
-    }
-
-    .container.visible { opacity: 1; transform: translateY(0); animation: glow 2.5s ease-in-out; }
-
-    h2 { color: #800040; margin-bottom: 15px; font-size: 24px; }
-    p, ul { color: #333; line-height: 1.7; font-size: 15px; }
-    li { margin-bottom: 8px; }
-
-    .tools {
-      margin-top: 25px;
-      background-color: #ffe6eb;
-      padding: 12px 16px;
-      border-radius: 10px;
-      display: inline-block;
-      font-weight: 500;
-      color: #800040;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    .tools:hover { background-color: #ffd0db; transform: scale(1.05); }
-
-    .gallery {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-    .gallery img {
-      width: 480px;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    .gallery img.visible { opacity: 1; transform: translateY(0); animation: fadeUp 1s ease forwards; }
-    .gallery img:hover { transform: scale(1.04); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
-
-    @media (max-width: 900px) { .hero { height: auto; padding: 40px 20px; } .gallery img { width: 100%; } }
-
-    .back-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      padding: 12px 25px;
-      background-color: #581C1C;
-      color: #fff;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: background 0.3s ease, transform 0.3s ease;
-      z-index: 1000;
-    }
-    .back-btn:hover { background-color: #a00060; transform: scale(1.05); }
-  </style>
-</head>
-<body>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <img src="image/pco.png" alt="Pharmaceutical Dashboard Main">
-    <h1>Pharmaceutical Sales Performance Dashboard</h1>
-  </section>
-
-  <!-- CONTENT SECTION -->
-  <div class="container reveal">
-    <h2>Project Overview</h2>
-    <p style="text-align:justify;">
-      Pharmaceutical sales data can be messy, complex, and overwhelming, making it difficult for decision-makers to uncover key trends. Over a three-month period (July–September 2025), I worked with 6,185 transactions across 970 products generating ₦52 million in revenue.  
-
-      <strong>Challenge:</strong> Raw sales data was fragmented and unstructured, obscuring patterns in revenue, product performance, and purchasing behaviors. The business needed actionable insights to optimize inventory, marketing, and product strategies.  
-
-      <strong>Methodology:</strong> I cleaned and structured the dataset, performed exploratory data analysis to identify outliers and trends, and leveraged Power BI to visualize revenue patterns, category performance, and temporal dynamics.  
-
-      <strong>Outcome:</strong> The resulting dashboard highlighted high-performing products, mapped peak revenue periods, and provided actionable insights for inventory planning, marketing campaigns, and strategic decision-making.
-    </p>
-
-    <h2>Key Insights</h2>
-    <ul>
-      <li><b>Weekday Revenue Dominance:</b> 75.89% of revenue occurred on weekdays, revealing strong engagement during business days.</li>
-      <li><b>Revenue Peaks:</b> Peak revenue reached ₦2.7M, reflecting seasonal or promotional effects.</li>
-      <li><b>Top Categories:</b> Pharmaceuticals, Antibiotics, and Analgesics led performance; 546 products in “Others” indicate potential for reclassification.</li>
-      <li><b>Transaction Patterns:</b> Daily variations inform staffing, inventory optimization, and promotional timing.</li>
-    </ul>
-
-    <div class="tools">
-      🔧 Tools Used: Power BI
-      <p style="color:#581C1C;">Detailed Project: <a href="https://github.com/456Val/Pharmaceutical-Sales-Analytics" style="color:#581C1C;">Project Link</a></p>
-    </div>
-
-    <!-- IMAGE GALLERY -->
-    <div class="gallery">
-      <img src="image/pcd.png" alt="Dashboard View 1" class="reveal">
-      <img src="image/psa.png" alt="Dashboard View 2" class="reveal">
-    </div>
-
-    <p style="color:#581C1C; text-align:center; margin-top:25px;">
-      📊 Delivered actionable insights that enabled optimized inventory management, targeted marketing, and enhanced product strategies for sustained revenue growth.
-    </p>
-  </div>
-
-  <a href="index.html" class="back-btn">← Back to Portfolio</a>
-
-  <script>
-    const reveals = document.querySelectorAll('.reveal, .gallery img, .container');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(r => observer.observe(r));
-  </script>
-</body>
-</html>
-
