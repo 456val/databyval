@@ -18,7 +18,6 @@
     @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes glow { 0% { box-shadow: 0 0 0 rgba(255,182,193,0); } 50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); } 100% { box-shadow: 0 0 0 rgba(255,182,193,0); } }
 
-    /* Hero Section */
     .hero {
       background: #FCEDEA;
       display: flex;
@@ -56,7 +55,6 @@
       animation-delay: 0.8s;
     }
 
-    /* Main Container */
     .container {
       max-width: 1100px;
       margin: 70px auto;
@@ -74,7 +72,6 @@
     p, ul { color: #333; line-height: 1.7; font-size: 15px; text-align: justify; }
     li { margin-bottom: 8px; }
 
-    /* Cards for Insights & Recommendations */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -91,7 +88,6 @@
     .card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
     .card h4 { color: #581C1C; margin-bottom: 10px; font-size: 1.1rem; }
 
-    /* Tools */
     .tools {
       margin-top: 25px;
       background-color: #581C1C;
@@ -103,7 +99,6 @@
       transition: background 0.3s ease, transform 0.3s ease;
     }
 
-    /* Gallery */
     .gallery {
       display: flex;
       justify-content: center;
@@ -125,7 +120,6 @@
 
     @media (max-width: 900px) { .hero { height: auto; padding: 40px 20px; } .gallery img { width: 100%; } }
 
-    /* Back Button */
     .back-btn {
       position: fixed;
       bottom: 30px;
@@ -154,21 +148,22 @@
   <!-- Main Container -->
   <div class="container reveal">
 
-    <!-- Project Overview -->
+    <!-- Project Overview (Problem) -->
     <h2>Project Overview</h2>
     <p>
-      Every sale tells a story. From July through September 2025, I worked with 6,185 transactions across 970 products, generating ₦52 million in revenue. Cleaning and structuring messy data, exploring trends, and identifying outliers was the first step. Using Power BI, I visualized purchasing behaviors, tracked category performance, and mapped temporal trends—transforming raw numbers into actionable insights. The resulting dashboard guided smarter inventory and marketing strategies, highlighted high-performing products, and demonstrated the power of data-driven strategies to enhance business performance.
+      Pharmaceutical companies often struggle to understand sales trends, product performance, and category contribution across multiple products and regions. 
+      Without a structured view, marketing campaigns, inventory planning, and resource allocation can be inefficient and revenue opportunities may be missed. 
+      This project focuses on transforming 6,185 transactions spanning 970 products into actionable insights to optimize sales, inventory, and marketing strategy for the July–September 2025 period.
     </p>
 
-    <!-- Methodology -->
+    <!-- Methodology (Action) -->
     <h2>Methodology</h2>
-    <p>The project followed a structured approach entirely in Power BI:</p>
     <ul>
-      <li>Imported and cleaned sales transaction data to ensure accuracy and consistency.</li>
-      <li>Structured data tables to categorize products and track revenue by day, week, and month.</li>
-      <li>Created calculated columns and measures to analyze revenue trends, transaction counts, and category performance.</li>
-      <li>Built interactive dashboards to visualize purchasing patterns, top-selling products, and temporal trends.</li>
-      <li>Identified key insights to inform marketing strategies, inventory management, and operational decisions.</li>
+      <li>Imported and cleaned transactional data in Power BI to ensure accuracy and consistency.</li>
+      <li>Structured tables to track revenue, product categories, and transactions over time (day, week, month).</li>
+      <li>Created measures and calculated columns to monitor sales trends, top-performing products, and category contributions.</li>
+      <li>Built interactive dashboards to visualize revenue patterns, transaction spikes, and product performance for easy decision-making.</li>
+      <li>Derived actionable insights to guide marketing campaigns, inventory management, and resource allocation based on temporal and categorical trends.</li>
     </ul>
 
     <!-- Tools -->
@@ -177,41 +172,41 @@
       <p><a href="https://github.com/456Val/Pharmaceutical-Sales-Analytics" style="color:#fff;">Project Repository</a></p>
     </div>
 
-    <!-- Key Insights Cards -->
+    <!-- Key Insights (Results) -->
     <h2>Key Insights</h2>
     <div class="card-grid">
       <div class="card">
         <h4>📊 Weekday Revenue Dominance</h4>
-        <p>75.89% of revenue occurred on weekdays, showing stronger engagement during business days.</p>
+        <p>75.89% of total revenue occurred on weekdays, highlighting higher engagement during business days.</p>
       </div>
       <div class="card">
-        <h4>📈 Revenue Peaks</h4>
-        <p>Revenue peaks reached ₦2.7M, reflecting seasonal or promotional effects.</p>
+        <h4>📈 Peak Revenue Events</h4>
+        <p>Revenue reached ₦2.7M at peaks, indicating seasonal or promotional effects worth leveraging.</p>
       </div>
       <div class="card">
-        <h4>💊 Category Performance</h4>
-        <p>Pharmaceuticals, Antibiotics, and Analgesics led performance; 546 products in “Others” suggest potential reclassification.</p>
+        <h4>💊 Top Categories</h4>
+        <p>Pharmaceuticals, Antibiotics, and Analgesics contributed the most revenue; 546 products in “Others” suggest potential for reclassification and focus.</p>
       </div>
       <div class="card">
         <h4>🛒 Transaction Patterns</h4>
-        <p>Daily transaction variation offers insight for staffing and inventory optimization.</p>
+        <p>Daily transaction variation provides insight for optimizing staffing and inventory allocation.</p>
       </div>
     </div>
 
-    <!-- Recommendations Cards -->
+    <!-- Recommendations (Results / Actionable) -->
     <h2>Recommendations</h2>
     <div class="card-grid">
       <div class="card">
         <h4>⏰ Optimize Engagement Timing</h4>
-        <p>Focus campaigns and activities during peak hours to maximize engagement.</p>
+        <p>Focus marketing campaigns during peak weekday hours to maximize revenue impact.</p>
       </div>
       <div class="card">
-        <h4>📅 Plan Staffing & Resources</h4>
-        <p>Adjust staffing on high-activity days and reduce on low-activity days to improve operational efficiency.</p>
+        <h4>📅 Adjust Staffing & Inventory</h4>
+        <p>Align staffing and stock levels with high-activity days for operational efficiency.</p>
       </div>
       <div class="card">
-        <h4>🗓️ Focus on High-Performing Periods</h4>
-        <p>Prioritize marketing, inventory, and resources around top-performing months and quarters.</p>
+        <h4>🗓️ Prioritize High-Performing Periods</h4>
+        <p>Plan promotions, marketing, and inventory around top-performing months and quarters.</p>
       </div>
     </div>
 
@@ -222,7 +217,7 @@
     </div>
 
     <p style="text-align:center; margin-top:25px; color:#581C1C;">
-      📊 Analyzed sales performance and product trends, providing actionable insights to optimize revenue, inventory, and product strategies.
+      📊 Insights from sales and product trends were used to optimize marketing, inventory, and revenue strategies, demonstrating the value of data-driven decision making.
     </p>
 
   </div>
