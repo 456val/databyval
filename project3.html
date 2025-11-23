@@ -14,6 +14,7 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
+
     @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes glow { 0% { box-shadow: 0 0 0 rgba(255,182,193,0); } 50% { box-shadow: 0 0 20px rgba(255,182,193,0.6); } 100% { box-shadow: 0 0 0 rgba(255,182,193,0); } }
 
@@ -21,9 +22,7 @@
     .hero {
       background: #FCEDEA;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      
       flex-direction: column;
       padding: 60px 20px;
       height: 70vh;
@@ -45,7 +44,15 @@
       transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
     .hero img:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
-    .hero h1 { font-size: 36px; margin-bottom: 10px; color: #581C1C; text-shadow: 0 2px 4px rgba(0,0,0,0.25); opacity: 0; animation: fadeUp 1s ease forwards; animation-delay: 0.8s; }
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #581C1C;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.8s;
+    }
 
     /* Main Container */
     .container {
@@ -60,8 +67,9 @@
       transition: all 1s ease;
     }
     .container.visible { opacity: 1; transform: translateY(0); animation: glow 2.5s ease-in-out; }
+
     h2 { color: #800040; margin-bottom: 15px; font-size: 24px; }
-    p, ul { color: #333; line-height: 1.7; font-size: 15px; }
+    p, ul { color: #333; line-height: 1.7; font-size: 15px; text-align: justify; }
     li { margin-bottom: 8px; }
 
     /* Cards for Insights & Recommendations */
@@ -92,7 +100,6 @@
       color: white;
       transition: background 0.3s ease, transform 0.3s ease;
     }
-    .tools:hover { background-color: #ffd0db; transform: scale(1.05); }
 
     /* Gallery */
     .gallery {
@@ -147,13 +154,13 @@
 
     <!-- Project Overview -->
     <h2>Project Overview</h2>
-    <p style="text-align:justify;">
+    <p>
       Every sale tells a story. From July through September 2025, I worked with 6,185 transactions across 970 products, generating ₦52 million in revenue. Cleaning and structuring messy data, exploring trends, and identifying outliers was the first step. Using Power BI, I visualized purchasing behaviors, tracked category performance, and mapped temporal trends—transforming raw numbers into actionable insights. The resulting dashboard guided smarter inventory and marketing strategies, highlighted high-performing products, and demonstrated the power of data-driven strategies to enhance business performance.
     </p>
+
+    <!-- Methodology -->
     <h2>Methodology</h2>
-    <p style="text-align:justify;">
-      The project followed a structured approach entirely in Power BI:
-    </p>
+    <p>The project followed a structured approach entirely in Power BI:</p>
     <ul>
       <li>Imported and cleaned sales transaction data to ensure accuracy and consistency.</li>
       <li>Structured data tables to categorize products and track revenue by day, week, and month.</li>
@@ -165,11 +172,11 @@
     <!-- Tools -->
     <div class="tools">
       🔧 Tools Used: Power BI
-      <p style="color:#581C1C;">Project Repository: <a href="https://github.com/456Val/Pharmaceutical-Sales-Analytics" style="color:#581C1C;">GitHub Link</a></p>
+      <p><a href="https://github.com/456Val/Pharmaceutical-Sales-Analytics" style="color:#fff;">Project Repository</a></p>
     </div>
 
     <!-- Key Insights Cards -->
-    <h2><center>Key Insights</center</h2>
+    <h2>Key Insights</h2>
     <div class="card-grid">
       <div class="card">
         <h4>📊 Weekday Revenue Dominance</h4>
@@ -183,14 +190,14 @@
         <h4>💊 Category Performance</h4>
         <p>Pharmaceuticals, Antibiotics, and Analgesics led performance; 546 products in “Others” suggest potential reclassification.</p>
       </div>
-      <div class="card" style="width: 350px; margin: 0 auto; text-align: center;">
+      <div class="card">
         <h4>🛒 Transaction Patterns</h4>
         <p>Daily transaction variation offers insight for staffing and inventory optimization.</p>
       </div>
     </div>
 
     <!-- Recommendations Cards -->
-    <h2><center>Recommendations</center></h2>
+    <h2>Recommendations</h2>
     <div class="card-grid">
       <div class="card">
         <h4>⏰ Optimize Engagement Timing</h4>
@@ -212,7 +219,7 @@
       <img src="image/psa.png" alt="Dashboard View 2" class="reveal">
     </div>
 
-    <p style="color:#581C1C; text-align:center; margin-top:25px;">
+    <p style="text-align:center; margin-top:25px; color:#581C1C;">
       📊 Analyzed sales performance and product trends, providing actionable insights to optimize revenue, inventory, and product strategies.
     </p>
 
@@ -224,15 +231,9 @@
   <script>
     const reveals = document.querySelectorAll('.reveal, .gallery img, .container');
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     reveals.forEach(r => observer.observe(r));
   </script>
 </body>
 </html>
-
-
-
-
