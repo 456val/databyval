@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profit Leak Detection | Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    .project-hero {
+      background: linear-gradient(135deg, #581C1C, #A05252);
+      color: #FCEDEA;
+      text-align: center;
+      padding: 140px 20px 100px;
+    }
+
+    .project-hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    .project-hero p {
+      font-size: 1.2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    .project-detail {
+      max-width: 1100px;
+      margin: -60px auto 100px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      padding: 60px 40px;
+      position: relative;
+      z-index: 5;
+      color: #3D0C02;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      color: #581C1C;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
+
+    .overview {
+      margin-bottom: 60px;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+
+    .insight-card {
+      background: #FCEDEA;
+      border-left: 6px solid #A05252;
+      border-radius: 12px;
+      padding: 25px 20px;
+    }
+
+    .insight-card h4 {
+      color: #581C1C;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .visuals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin: 50px 0;
+    }
+
+    .visual {
+      background-color: #FCEDEA;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    .visual p {
+      font-size: 0.95rem;
+      margin-top: 10px;
+      font-style: italic;
+      color: #581C1C;
+    }
+
+    .tools {
+      margin-top: 20px;
+      background-color: #581C1C;
+      padding: 10px 15px;
+      border-radius: 10px;
+      display: inline-block;
+      font-weight: 500;
+      color: white;
+    }
+
+    .summary {
+      margin-top: 40px;
+      text-align: center;
+      font-style: italic;
+      color: #3D0C02;
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 50px;
+      background: #581C1C;
+      color: #fff;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="project-hero">
+  <h1>📦 Profit Leak Detection in FMCG Supply Chains</h1>
+  <p>
+    Every day, FMCG companies lose millions of naira to hidden inventory issues.
+    This project uncovers where revenue is silently leaking due to stockouts,
+    overselling, overstocking, and expired products — and shows how data can guide
+    smarter operational decisions.
+  </p>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="project-detail">
+
+  <!-- OVERVIEW -->
+  <div class="overview">
+    <h3 class="section-title">Business Context</h3>
+    <p>
+      A mid-sized FMCG company operating multiple retail stores and a central
+      warehouse across Nigeria was experiencing inconsistent product availability,
+      unexplained revenue gaps, and rising inventory losses.
+      While sales data existed, there was no clear visibility into <strong>where</strong>
+      losses were happening, <strong>why</strong> they were occurring, or
+      <strong>which products and stores</strong> required urgent attention.
+    </p>
+
+    <h3 class="section-title">Objective</h3>
+    <p>
+      The objective of this project was to design a <strong>profit leak detection
+      system</strong> that identifies and quantifies:
+    </p>
+    <ul>
+      <li>Revenue loss caused by stockouts and negative stock (overselling)</li>
+      <li>Overstock and expiry risks at batch and store level</li>
+      <li>Store-level inventory performance and risk concentration</li>
+    </ul>
+
+    <h3 class="section-title">Approach</h3>
+    <p>
+      Structured inventory and sales datasets were loaded directly into Python.
+      The analysis focused on correctness of logic and business interpretation rather
+      than data collection.
+    </p>
+    <ul>
+      <li>Computed daily stock levels per product and store</li>
+      <li>Identified zero-stock and negative-stock events</li>
+      <li>Calculated lost units and lost revenue from unmet demand</li>
+      <li>Analyzed overstocked and expired batches to estimate financial risk</li>
+      <li>Built an interactive Streamlit application for decision support</li>
+    </ul>
+  </div>
+
+  <!-- VISUALS -->
+  <h3 class="section-title" style="text-align:center;">Visual Highlights</h3>
+  <div class="visuals-grid">
+    <div class="visual">
+      <img src="image/stockout.png" width="100%" alt="Stockout Analysis">
+      <p>Negative stock events drive a significant portion of revenue loss, more than zero-stock days.</p>
+    </div>
+    <div class="visual">
+      <img src="image/store.png" width="100%" alt="Store Performance">
+      <p>A small number of stores account for a disproportionately high share of lost revenue.</p>
+    </div>
+    <div class="visual">
+      <img src="image/overstock.png" width="100%" alt="Overstock Risk">
+      <p>Repeated overstock and expired batches reveal demand–supply misalignment.</p>
+    </div>
+  </div>
+
+  <!-- INSIGHTS -->
+  <h3 class="section-title" style="text-align:center;">Key Insights</h3>
+  <div class="insights-grid">
+    <div class="insight-card">
+      <h4>💸 Revenue Loss Concentration</h4>
+      <p>
+        A small subset of products (notably products 101, 102, and 104) contribute
+        the majority of total lost revenue, indicating clear prioritization opportunities.
+      </p>
+    </div>
+
+    <div class="insight-card">
+      <h4>⚠️ Overselling as the Root Cause</h4>
+      <p>
+        Negative stock events occur more frequently than pure stockouts and result
+        in higher lost revenue, pointing to fulfillment and inventory synchronization issues.
+      </p>
+    </div>
+
+    <div class="insight-card">
+      <h4>🏬 High-Risk Stores</h4>
+      <p>
+        Port Harcourt Outlet, Lagos Flagship, and Abuja Main Store consistently appear
+        as high-risk locations across stockout, overselling, and expiry metrics.
+      </p>
+    </div>
+
+    <div class="insight-card">
+      <h4>📦 Overstock & Expiry Exposure</h4>
+      <p>
+        Product 105 shows repeated overstock across multiple stores and batches,
+        with expired inventory contributing directly to avoidable financial loss.
+      </p>
+    </div>
+  </div>
+
+  <!-- RECOMMENDATIONS -->
+  <h3 class="section-title" style="text-align:center;">Business Recommendations</h3>
+  <div class="insights-grid">
+    <div class="insight-card">
+      <h4>🔔 Prevent Overselling</h4>
+      <p>
+        Introduce real-time stock validation and alerts before inventory reaches zero
+        to reduce lost revenue from negative stock events.
+      </p>
+    </div>
+
+    <div class="insight-card">
+      <h4>📊 Demand-Aligned Replenishment</h4>
+      <p>
+        Adjust reorder quantities based on observed average daily demand to minimize
+        both stockouts and overstock.
+      </p>
+    </div>
+
+    <div class="insight-card">
+      <h4>🗂️ Batch-Level Expiry Tracking</h4>
+      <p>
+        Actively monitor high-risk batches and redistribute inventory before expiry
+        to reduce write-offs.
+      </p>
+    </div>
+  </div>
+
+  <!-- TOOLS -->
+  <div class="tools">
+    🔧 Tools Used: Python (Pandas, Matplotlib, Numpy), Plotly, Streamlit  
+    <p><a href="https://github.com/456val/profit-leak-detection-supply-chain" style="color:#fff;">Project Repository</a></p>
+  </div>
+
+  <!-- SUMMARY -->
+  <p class="summary">
+    This project demonstrates how data-driven inventory analysis can expose hidden
+    profit leaks, guide operational decisions, and directly impact a company’s bottom line.
+    It reflects my ability to translate raw data into executive-level insights and actions.
+  </p>
+
+  <div style="text-align:center;">
+    <a href="index.html" class="btn-back">← Back to Portfolio</a>
+  </div>
+
+</div>
+
+</body>
+</html>
