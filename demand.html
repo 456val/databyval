@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demand Forecasting | Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Hero Section */
+    .project-hero {
+      background: linear-gradient(135deg, #581C1C, #A05252);
+      color: #FCEDEA;
+      text-align: center;
+      padding: 140px 20px 100px;
+    }
+
+    .project-hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .project-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Project Detail */
+    .project-detail {
+      max-width: 1100px;
+      margin: -60px auto 100px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      padding: 60px 40px;
+      position: relative;
+      z-index: 5;
+      color: #3D0C02;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      color: #581C1C;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+
+    .overview {
+      margin-bottom: 60px;
+    }
+
+    .overview strong {
+      color: #A05252;
+    }
+
+    /* --- Redesigned Insight Cards --- */
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .insight-card {
+      background: linear-gradient(135deg, #fff1f0, #fce7e6);
+      border-radius: 20px;
+      padding: 30px 25px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border-left: 6px solid #A05252;
+    }
+
+    .insight-card::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: rgba(255,255,255,0.05);
+      transform: rotate(25deg);
+      pointer-events: none;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-8px) rotate(-1deg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    .insight-card h4 {
+      color: #581C1C;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .insight-card p {
+      margin-bottom: 10px;
+    }
+
+    /* Tools */
+    .tools {
+      margin-top: 20px;
+      background-color: #581C1C;
+      padding: 12px 16px;
+      border-radius: 14px;
+      display: inline-block;
+      font-weight: 500;
+      color: white;
+      transition: background 0.3s ease, transform 0.3s ease;
+      max-width: 280px;
+      text-align: center;
+    }
+
+    .tools:hover {
+      transform: scale(1.05);
+    }
+
+    /* Visual Grid */
+    .visuals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 50px;
+      margin: 50px 0;
+    }
+
+    .visual {
+      background: linear-gradient(135deg, #fff1f0, #fce7e6);
+      border-radius: 16px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .visual:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    /* Summary */
+    .summary {
+      margin-top: 40px;
+      text-align: center;
+      font-style: italic;
+      color: #3D0C02;
+    }
+
+    /* Back Button */
+    .btn-back {
+      display: inline-block;
+      margin-top: 50px;
+      background: #581C1C;
+      color: #fff;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background: #732626;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="project-hero">
+    <h1>📦 Demand Forecasting & Inventory Intelligence</h1>
+    <p>Using ARIMA and Prophet to predict demand, prevent stockouts, and reduce revenue leakage</p>
+  </section>
+
+  <!-- Main Project Detail -->
+  <div class="project-detail">
+    <div class="overview">
+
+      <!-- Project Overview -->
+      <h3 class="section-title">Project Overview</h3>
+      <p>
+        Retail operations often suffer revenue loss due to poor demand planning, late reorders, and unexpected
+        stockouts. This project builds a <strong>demand forecasting and inventory intelligence system</strong>
+        using historical stock movements, sales transactions, inventory levels, and purchase records.
+        The dashboard predicts future demand using <strong>ARIMA</strong> and <strong>Prophet</strong>, then
+        connects those forecasts to inventory decisions such as reorder alerts and revenue leak detection.
+      </p>
+
+      <!-- Methodology -->
+      <h3 class="section-title">Methodology</h3>
+      <p>The system follows a data-driven pipeline aligned with your dashboard logic:</p>
+      <ul>
+        <li>Integrated stock movements, sales items, inventory, products, and purchase tables.</li>
+        <li>Engineered demand from sales quantities and stock changes.</li>
+        <li>Handled missing demand using forward fill and rolling smoothing.</li>
+        <li>Built ARIMA models for short-term statistical forecasting.</li>
+        <li>Applied Prophet to capture trend and seasonality patterns.</li>
+        <li>Generated trend charts, stockout timelines, and reorder alert signals.</li>
+        <li>Estimated lost revenue caused by unavailable stock (revenue leak analysis).</li>
+      </ul>
+
+      <!-- Outcome -->
+      <h3 class="section-title">Outcome</h3>
+      <p>
+        The final dashboard transforms raw operational data into forward-looking intelligence, enabling proactive
+        replenishment, reduced stockout risk, and better revenue protection across products and stores.
+      </p>
+    </div>
+
+    <!-- Visual Highlights -->
+    <h3 class="section-title"><center>Visual Highlights</center></h3>
+    <div class="visuals-grid">
+      <div class="visual"><img src="ArimaForecasting.png" width="100%" height="220px" alt="ARIMA Forecast"></div>
+      <div class="visual"><img src="ProphetDemandForecasting.png" width="100%" height="220px" alt="Prophet Forecast"></div>
+      <div class="visual"><img src="Arima Model Forecasting.png" width="100%" height="220px" alt="Forecast Comparison"></div>
+      <div class="visual"><img src="stockout_timeline.png" width="100%" height="220px" alt="Stockout Timeline"></div>
+    </div>
+
+    <!-- Key Insights -->
+    <h3 class="section-title"><center>Key Insights</center></h3>
+    <div class="insights-grid">
+      <div class="insight-card">
+        <h4>📉 Revenue Leak from Stockouts (Prophet Insights)</h4>
+        <p>
+          Prophet helps the business see demand changes early so products don’t disappear from the shelves.
+        </p>
+        <ul>
+          <li>The model follows sales trends and seasonal behavior, understanding when demand spikes.</li>
+          <li>Forecasts warn the business early, giving time to prepare stock.</li>
+          <li>Recommends higher inventory during busy periods, reducing stockout risk.</li>
+          <li>Protects revenue by keeping products available for customers.</li>
+        </ul>
+        <p><strong>Best Use:</strong> Seasonal products, promotions, and volatile demand markets.</p>
+      </div>
+
+      <div class="insight-card">
+        <h4>📈 ARIMA Forecast Insights</h4>
+        <p>
+          ARIMA helps understand stable demand patterns for steady inventory planning.
+        </p>
+        <ul>
+          <li>Shows reliable sales trends for controlled planning.</li>
+          <li>Stable prediction with ~12% error builds trust in inventory decisions.</li>
+          <li>Recommends reasonable stock levels to avoid overstocking.</li>
+          <li>Includes small safety buffer for surprises, keeping shelves filled without waste.</li>
+        </ul>
+        <p><strong>Best Use:</strong> Mature products with predictable demand.</p>
+      </div>
+    </div>
+
+    <!-- Recommendations -->
+    <h3 class="section-title"><center>Recommendations</center></h3>
+    <div class="insights-grid">
+      <div class="insight-card">
+        <h4>📦 Use the Right Forecast for the Right Product</h4>
+        <p>ARIMA for steady sales, Prophet for seasonal/volatile demand to keep shelves stocked.</p>
+      </div>
+      <div class="insight-card">
+        <h4>⏱ Reorder Before Stock Runs Out</h4>
+        <p>Link forecasts to reorder points to prevent empty shelves and long stockout periods.</p>
+      </div>
+      <div class="insight-card">
+        <h4>💰 Protect Revenue with Safety Stock</h4>
+        <p>Maintain small safety buffers for key products to always satisfy customer demand.</p>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="tools">
+      🔧 Tools Used: Python, Streamlit, ARIMA, Prophet, Pandas, Plotly
+      <p><a href="#" style="color:#fff;">Project Repository</a></p>
+    </div>
+
+    <!-- Summary -->
+    <p class="summary">
+      This project shows how forecasting, inventory data, and revenue logic combine into a single intelligence system
+      that helps businesses prevent loss before it happens instead of reacting after.
+    </p>
+
+    <div style="text-align:center;">
+      <a href="index.html" class="btn-back">← Back to Portfolio</a>
+    </div>
+  </div>
+
+</body>
+</html>
