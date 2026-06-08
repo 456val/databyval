@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FCEDEA;
+      color: #581C1C;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #FCEDEA;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .logo { font-weight: bold; color: #581C1C; letter-spacing: 1px; }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav ul li a { text-decoration: none; color: #581C1C; font-weight: 500; }
+    nav ul li a:hover { border-bottom: 2px solid #581C1C; }
+
+    /* Hamburger Menu */
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+    .menu-toggle div { width: 25px; height: 3px; background-color: #581C1C; margin: 4px 0; border-radius: 2px; }
+    @media (max-width: 768px) {
+      nav ul { display: none; flex-direction: column; background: #FCEDEA; position: absolute; top: 70px; right: 20px; width: 200px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); text-align: right; padding: 15px; }
+      nav ul.active { display: flex; }
+      .menu-toggle { display: flex; }
+    }
+
+    /* Hero Section */
+    .hero { text-align: center; padding: 180px 20px 80px; }
+    .hero h2 { font-size: 3rem; color: #581C1C; margin-bottom: 20px; }
+    .hero .btn { background-color: #581C1C; color: #FCEDEA; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .hero .btn:hover { background-color: #400F0F; }
+
+    /* About Section */
+    .about-section { padding: 100px 20px; display: flex; justify-content: center; }
+    .about-card {
+      background: #732626;
+      color: #FCEDEA;
+      padding: 40px;
+      border-radius: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 700px;
+      align-items: center;
+    }
+    .about-image { width: 250px; height: 250px; background: #A05252; border-radius: 10px; }
+    .about-text h2 { margin-bottom: 20px; font-size: 2rem; }
+    .about-text p { line-height: 1.6; }
+
+    /* Skills Section */
+    .skills-section { padding: 100px 20px; text-align: center; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-top: 40px; }
+    .skill-card { background: #581C1C; color: #FCEDEA; padding: 30px; border-radius: 10px; font-weight: 600; }
+     /* Tools Section */
+    .tools-section { padding:80px 20px; text-align:center; }
+    .tools-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:40px; }
+
+    /* Education Section */
+    .education-section { padding:80px 20px; text-align:center; }
+    .education-section p { max-width:600px; margin:20px auto; line-height:1.6; }
+
+    /* Certifications Section */
+    .certifications-section { padding:80px 20px; text-align:center; }
+    .cert-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:40px; }
+    .cert-card { background:#732626; color:#FCEDEA; padding:30px; border-radius:12px; width:250px; }
+
+    /* Work With Me Section */
+    .work-section { padding:80px 20px; text-align:center; }
+    .work-section p { max-width:600px; margin:20px auto; line-height:1.6; }
+
+    /* Projects Section */
+    .projects-section { padding: 100px 20px; }
+    .projects-header { background: #581C1C; color: #FCEDEA; display: inline-block; padding: 15px 25px; border-radius: 10px; font-size: 2rem; font-weight: bold; margin-bottom: 20px; }
+    .projects-wrapper { display: flex; flex-direction: column; gap: 15px; }
+    .project-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+    .project-row.reverse { flex-direction: row-reverse; }
+    .project-row.slide-in { opacity: 1; transform: translateY(0); }
+
+    .project-card { flex: 1; min-width: 300px; max-width: 450px; background: #FCEDEA; color: #581C1C; border-radius: 12px; padding: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .project-card img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
+    .project-card .btn { margin-top: 15px; padding: 12px 20px; border-radius: 6px; font-weight: 600; text-decoration: none; background-color: #581C1C; color: #FCEDEA; }
+    .project-card .btn:hover { background-color: #400F0F; }
+
+    .project-overview { flex: 2; min-width: 250px; max-width: 600px; display: flex; flex-direction: column; justify-content: center; text-align: left; color: #581C1C; }
+    .project-overview h3 { margin-bottom: 10px; font-weight: bold; }
+    .project-overview p { line-height: 1.6; font-weight: 500; }
+
+    @media (max-width: 768px) { .project-row, .project-row.reverse { flex-direction: column; } .project-overview { margin-top: 15px; } }
+
+/* Contact Card */
+/* Contact Card */
+.contact-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-card {
+    background: #732626;
+    color: #FCEDEA;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;        /* fixed smaller width */
+    min-width: 250px;    /* prevent shrinking too much on small screens */
+    box-sizing: border-box; /* includes padding in width */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.contact-card.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-card .btn {
+    background: #FCEDEA;
+    color: #581C1C;
+}
+
+.contact-card .btn:hover {
+    background: #400F0F;
+    color: #FCEDEA;
+}
+
+/* Responsive for mobile */
+@media (max-width: 400px) {
+    .contact-card {
+        width: 90%; /* fills most of mobile width */
+    }
+}
+
+
+
+   /* Social Media Icons */
+.social-icons {
+  display: flex;
+  justify-content: center; /* center the icons */
+  gap: 8px; /* smaller space between icons */
+  margin-top: 20px;
+}
+
+.social-icons img {
+  width: 35px;
+  height: 35px;
+  display: block; /* remove inline spacing */
+  margin: 0; /* ensure no extra margin */
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2); /* subtle hover effect */
+}
+
+
+    /* Footer */
+    footer { text-align:center; padding:20px; background:#581C1C; color:#FCEDEA; font-size:0.9rem; }
+  </style>
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1 class="logo">VALERIE KELECHUKWU</h1>
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <h2>SHOWCASE OF MY WORK</h2>
+  <a href="#projects" class="btn">VIEW PORTFOLIO</a>
+</section>
+
+<section id="about" class="about-section">
+  <div class="about-card slide-on-scroll">
+    <div class="about-image"></div>
+    <div class="about-text">
+      <h2>ABOUT ME</h2>
+      <p style="text-align:justify";>I'm Valerie Kelechukwu, a data-driven professional with experience in reporting and operations support as a Virtual Assistant working at the intersection of data and operations.
+
+For me, data creates value when it is transformed into information that supports better decisions. I focus on operational and reporting data often raw, messy, and underutilized and turn it into clear, actionable insights.
+
+Working on the operational side has given me firsthand insight into how businesses actually run. That perspective allows me to connect data findings to real business outcomes, not just present numbers on a dashboard.
+
+What drives me is using data to make operations visible, measurable, and easier to manage because when a business has clarity, it can make better decisions and move forward with confidence.
+</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skills-section">
+  <h3 class="skill-category">SKILLS</h3>
+  <div class="skills-grid">
+      <div class="skill-card">Data Cleaning & Preprocessing</div>
+    <div class="skill-card">Exploratory Data Analysis (EDA)</div>
+    <div class="skill-card">Data Visualization & Reporting</div>
+    <div class="skill-card">Descriptive & Diagnostic Analysis</div>
+    <div class="skill-card">Predictive Analytics & Forecasting</div>
+    <div class="skill-card">Statistical Analysis</div>
+    <div class="skill-card">SQL & Database Querying</div>
+    <div class="skill-card">Dashboard Development (BI Tools)</div>
+    <div class="skill-card">Python for Data Analysis</div>
+    <div class="skill-card">Data Storytelling & Communication</div>
+
+    
+  </div>
+</section>
+
+<section id="tools" class="tools-section" style="padding:80px 20px; text-align:center;">
+  <h2>TOOLS I WORK WITH</h2>
+  <div class="tools-grid" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:40px;">
+    <img src="python.png" alt="Python" style="width:100px;">
+    <img src="sql.png" alt="SQL" style="width:100px;">
+    <img src="powerbi.png" alt="Power BI" style="width:100px;">
+    <img src="excel.png" alt="Excel" style="width:100px;">
+    <img src="word.png" alt="Excel" style="width:100px;">
+    <img src="powerpoint.png" alt="Excel" style="width:100px;">
+    <img src="jupyter.png" alt="Excel" style="width:100px;">
+</section>
+
+<section id="projects" class="projects-section">
+  <div class="projects-header">PROJECTS</div>
+  <div class="projects-wrapper">
+    <div class="project-row">
+      <div class="project-card"><img src="sql.png" alt="SQL Project"><a href="project1.html" class="btn">View Project</a></div>
+      <div class="project-overview"><h3>SQL SALES PERFORMANCE ANALYSIS</h3>
+    <p>Comprehensive SQL project analyzing sales performance including data cleaning, aggregation, visualization, and actionable insights. 
+    The dashboard delivers precise recommendations to optimize sales strategy.</p></div>
+    </div>
+    <div class="project-row reverse">
+      <div class="project-card"><img src="ccd.png" alt="Revenue & Customer Segmentation"><a href="project2.html" class="btn">View Project</a></div>
+      <div class="project-overview"><h3>REVENUE & CUSTOMER SEGMENTATION ANALYTICS</h3>
+      <p>In-depth revenue analysis combined with customer segmentation using SQL and Power BI, 
+      providing data-driven strategies to boost profitability and enhance customer targeting.</p></div>
+    </div>
+    <div class="project-row">
+      <div class="project-card"><img src="pco.png" alt="Pharmaceutical Sales Dashboard"><a href="project3.html" class="btn">View Project</a></div>
+      <div class="project-overview"><h3>PHARMACEUTICAL SALES ANALYTICS DASHBOARD</h3>
+      <p>Pharmaceutical companies often struggle to understand sales trends, product performance, and category contribution across regions. Without a structured view, marketing, inventory planning, and resource allocation can become inefficient, leading to missed revenue opportunities. This project analyzes 6,185 transactions across 970 products to generate actionable insights for sales, inventory, and marketing optimization (July–September 2025).
+</p></div>
+    </div>
+    <div class="project-row reverse">
+      <div class="project-card"><img src="british.png" alt="Customer Sentiment Analysis"><a href="project4.html" class="btn">View Project</a></div>
+      <div class="project-overview"><h3>CUSTOMER SENTIMENT ANALYSIS</h3>
+     <p>NLP project analyzing customer feedback to detect sentiment trends, uncover key insights, and 
+      provide actionable recommendations to improve customer satisfaction.</p></div>
+    </div>
+  </div>
+  <div class="project-row">
+  <div class="project-card">
+        <img src="image/inventory1.png" alt="">
+        <a href="profitLeak.html" class="btn">View Project</a>
+      </div>
+
+      <div class="project-overview">
+        <h3>Profit Leak Detection System</h3>
+        <p style="text-align: justify;">
+          Retailers lose revenue through stockouts, excess inventory, and poor visibility. This project identifies supply chain inefficiencies, quantifies losses, and provides data-driven recommendations to improve inventory planning and operational efficiency.
+        </p>
+      </div>
+    </div>
+<div class="project-row reverse">
+      <div class="project-card">
+        <img src="image/ArimaForecasting.png" alt="">
+        <a href="demand.html" class="btn">View Project</a>
+      </div>
+
+      <div class="project-overview">
+        <h3>Demand Forecasting & Planning</h3>
+        <p style="text-align: justify;">
+          A predictive analytics project that connects demand forecasting with inventory decisions to reduce stockouts, improve replenishment planning, and protect revenue using ARIMA and Prophet models.
+        </p>
+      </div>
+    </div>
+
+
+
+</section>
+<section id="experience" class="experience-section" style="padding:80px 20px; text-align:center; background:#fff;">
+  <h2 style="color:#581C1C; margin-bottom:50px;">WORK EXPERIENCE</h2>
+
+  <div style="max-width:800px; margin:0 auto; display:flex; flex-direction:column; gap:30px;">
+
+    <div style="background:#FCEDEA; border-radius:12px; padding:25px 30px; text-align:left; border-left:5px solid #581C1C;">
+      <h3>ICT Intern</h3>
+      <p>Nigeria Security Printing and Minting | FCT, Nigeria</p>
+      <p>May 2024 — Oct 2024</p>
+    </div>
+
+    <div style="background:#FCEDEA; border-radius:12px; padding:25px 30px; text-align:left; border-left:5px solid #581C1C;">
+      <h3>Data Analyst</h3>
+      <p>Oseode Technologies | Remote</p>
+      <p>Nov 2024 — Nov 2025</p>
+    </div>
+
+    <div style="background:#FCEDEA; border-radius:12px; padding:25px 30px; text-align:left; border-left:5px solid #581C1C;">
+      <h3>Virtual Assistant</h3>
+      <p>Kemmsbridge Resources | Remote</p>
+      <p>Mar 2025 — Present</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- WORK WITH ME -->
+<!-- WORK WITH ME -->
+<section id="work-with-me" class="work-section" style="background:#581C1C; color:#FCEDEA; padding:80px 40px;">
+  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
+
+    <!-- Left Image -->
+    <div style="flex: 1 1 45%; text-align: center;">
+      <img src="your-image.jpg" alt="Valerie Kelechwu - Data Analyst" style="max-width:100%; border-radius:12px;">
+    </div>
+
+    <!-- Right Text (Justified) -->
+    <div style="flex: 1 1 50%; text-align: justify;">
+      <!-- Right-Centered Heading -->
+      <h2 style="margin-bottom: 30px; text-align: center;">WORK WITH ME</h2>
+      
+      <p style="line-height: 1.8;">
+        When you work with me, you get more than reports and dashboards. I focus on delivering insights that support real business decisions. I take time to understand the problem, ensure data quality, and communicate findings clearly so they can be acted upon. Whether it's identifying trends, improving reporting, or uncovering opportunities, I am committed to producing work that is accurate, reliable, and valuable.
+      </p>
+
+     <p style="margin-top: 20px; line-height: 1.8;">
+    <h2><center>What sets me apart?</center></h2> I don’t just analyze numbers, I focus on understanding the business questions behind the data.
+    My approach combines <strong>technical skills</strong> with <strong>business awareness</strong>, helping transform raw data into insights that support better decisions.
+</p>
+
+<p style="margin-top: 20px; line-height: 1.8;">
+    My background combines Computer Science training with hands-on operations experience as a Virtual Assistant.
+    This allows me to see both the data and the processes behind it, giving me a practical perspective when solving problems.
+</p>
+
+<p style="margin-top: 20px; line-height: 1.8;">
+    From cleaning data and building dashboards to identifying trends and forecasting outcomes,
+    I focus on turning data into actionable insights that drive informed decision-making.
+</p>
+
+<p style="margin-top: 20px; line-height: 1.8;">
+    Your data should be more than a collection of numbers,it should be <strong>your clearest advantage</strong>.
+    <strong>My goal is to help turn data into clarity, enabling businesses to act with confidence and achieve measurable results.</strong>
+</p>
+
+      <div style="text-align: right;">
+        <a href="#contact" class="btn" 
+           style="background:#FCEDEA; color:#581C1C; padding:12px 24px; border-radius:6px; text-decoration:none; display:inline-block; margin-top:30px; font-weight:bold;">
+           Get in Touch
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+ 
+<!-- EDUCATION -->
+<section id="education" class="education-section" style="padding:80px 20px; text-align:center;">
+  <h2>EDUCATION</h2>
+  <p style="max-width:600px; margin:20px auto; line-height:1.6;">
+    Bachelor of Science (BSc) in Computer Science<br>
+    Edo University Iyamho, Auchi, Edo State, Nigeria
+  </p>
+</section>
+<section id="work-with-me" class="work-section" style="background:#581C1C; color:#FCEDEA; padding:80px 20px; text-align:center;">
+   
+    <h2>Services Offered</h2>
+   <div class="service-steps" style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; margin-top: 50px; position: relative;">
+  
+  <!-- Connecting burgundy line -->
+    <!-- Step 1 -->
+ <div class="step" style="background-color:#FCEDEA; color:#581C1C; border-radius:12px; padding:35px; width:500px; max-width:90%; margin:0 auto;">
+    <div style="background-color: #581C1C; color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; margin: 0 auto 15px auto;">1</div>
+    <h3>Services Offered</h3>
+    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 15px;">
+      <li>1. Data Cleaning & Preparation</li>
+      <li>2. Dashboard Development & Reporting</li>
+      <li>3. Business & Operational Analytics</li>
+      <li>4. Forecasting & Predictive Analytics</li>
+      <li>5. Data-Driven Decision Support</li>
+    </ul>
+</div>
+</section>
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="certifications-section" style="padding:80px 20px; text-align:center; background:#FCEDEA; color:#581C1C;">
+  <h2 style="margin-bottom:40px;">CERTIFICATIONS</h2>
+
+  <div class="cert-grid" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+    <img src="Certexcel.png" alt="Excel Certificate" style="width:250px; border-radius:8px;">
+    <img src="Certexcel2.png" alt="Data Preparation in Excel" style="width:250px; border-radius:8px;">
+    <img src="Certsql.png" alt="Data Manipulation in SQL" style="width:250px; border-radius:8px;">
+    <img src="ml.png" alt="Machine Learning with Tree-Based Models" style="width:250px; border-radius:8px;">
+    <img src="m3.png" alt="Machine Learning (Supervised Learning)" style="width:250px; border-radius:8px;">
+  </div>
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact-section" style="background:#732626; color:#FCEDEA; padding:60px 20px; text-align:center;">
+  <h3><center>CONTACT</center</h3>
+  <!-- Contact Social Icons -->
+<div class="social-icons">
+  <a href="https://https://www.linkedin.com/in/valerie-kelechukwu" target="_blank">
+    <img src="linkedin.png" alt="LinkedIn" width="100px">
+  </a>
+  <a href="https://github.com/456val" target="_blank">
+    <img src="github.png" alt="GitHub">
+  </a>
+  <a href="https://www.kaggle.com/valerie" target="_blank">
+    <img src="twitter.png" alt="Kaggle">
+  </a>
+</div>
+
+<h3>Let’s connect! Reach out for collaboration or opportunities.</h3>
+<h3><a href="mailto:valeriekelechukwu14@gmail.com" class="btn" style="background:#FCEDEA; color:#581C1C; margin:10px 0;">Email Me</a></h3>
+</section>
+
+<footer>
+  <p>© 2025 Valerie Kelechukwu. All rights reserved.</p>
+</footer>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Hamburger menu
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  menuToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); });
+
+  // Scroll unveil animation
+  const observerOptions = { threshold: 0.1 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('slide-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.project-row, .slide-on-scroll').forEach(el => observer.observe(el));
+
+ 
+</script>
+
+</body>
+</html>
