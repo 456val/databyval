@@ -202,18 +202,19 @@ body {
 
     /* About Section */
     /* About Section */
-. .about-section { padding: 100px 20px; display: flex; justify-content: center; }
-    .about-card {
-      background: #732626;
-      color: #FCEDEA;
-      padding: 40px;
-      border-radius: 15px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      max-width: 700px;
-      align-items: center;
-    }
+.about-section { padding: 100px 20px; display: flex; justify-content: center; }
+   .about-card {
+    background: #732626;
+    color: #FCEDEA;
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+    flex-wrap: wrap;
+}
     .about-image { width: 250px; height: 250px; background: #A05252; border-radius: 10px; }
     .about-text h2 { margin-bottom: 20px; font-size: 2rem; }
     .about-text p { line-height: 1.6; }
