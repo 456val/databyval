@@ -201,66 +201,81 @@ body {
     .hero .btn:hover { background-color: #400F0F; }
 
     /* About Section */
-    .about-card {
-  background: #581C1C;
+    /* About Section */
+.about-section {
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-card {
+  background: #732626;
   color: #FCEDEA;
-  padding: 50px;
+  padding: 40px;
   border-radius: 15px;
   display: flex;
   align-items: center;
-  justify-content: center; /* centers content */
-  gap: 30px; /* controls distance between image and text */
-  max-width: 900px;
-  margin: 0 auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  gap: 40px;
 }
 
 .about-image {
-  flex: 0 0 250px;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: none;
+  box-shadow: none;
+  border: none;
+  margin-top: -40px;
 }
 
 .about-image img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
   border-radius: 10px;
+  object-fit: cover;
   display: block;
 }
 
 .about-text {
-  flex: 1;
-  max-width: 500px;
+  flex: 2;
+  min-width: 300px;
 }
 
 .about-text h2 {
-  text-align: center;
   margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
   color: #FCEDEA;
 }
 
 .about-text p {
-  text-align: justify;
-  line-height: 1.8;
-  margin: 0;
+  line-height: 1.6;
+  color: #FCEDEA;
+  font-size: 1rem;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .about-card {
     flex-direction: column;
     text-align: center;
-    padding: 30px;
-    gap: 20px;
-  }
-
-  .about-image img {
-    width: 200px;
-    height: 200px;
   }
 
   .about-text {
-    max-width: 100%;
+    text-align: justify;
+  }
+
+  .about-image {
+    margin-top: 20px;
+  }
+
+  .about-image img {
+    max-width: 220px;
   }
 }
 
