@@ -202,62 +202,22 @@ body {
 
     /* About Section */
     /* About Section */
-.about-section {
-  padding: 100px 20px;
-  display: flex;
-  justify-content: center;
-}
+. .about-section { padding: 100px 20px; display: flex; justify-content: center; }
+    .about-card {
+      background: #732626;
+      color: #FCEDEA;
+      padding: 40px;
+      border-radius: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 700px;
+      align-items: center;
+    }
+    .about-image { width: 250px; height: 250px; background: #A05252; border-radius: 10px; }
+    .about-text h2 { margin-bottom: 20px; font-size: 2rem; }
+    .about-text p { line-height: 1.6; }
 
-.about-card {
-  background: #732626;
-  color: #FCEDEA;
-  padding: 40px;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  gap: 40px;
-}
-
-.about-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: none;
-  box-shadow: none;
-  border: none;
-  margin-top: -40px;
-}
-
-.about-image img {
-  width: 100%;
-  max-width: 280px;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  display: block;
-}
-
-.about-text {
-  flex: 2;
-  min-width: 300px;
-}
-
-.about-text h2 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #FCEDEA;
-}
-
-.about-text p {
-  line-height: 1.6;
-  color: #FCEDEA;
-  font-size: 1rem;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
