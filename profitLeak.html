@@ -687,68 +687,89 @@ body {
 
   <!-- INSIGHTS -->
   <h3 class="section-title" style="text-align:center;">Key Insights</h3>
-  <div class="insights-grid">
-    <div class="insight-card">
-      <h4>💸 Revenue Loss Concentration</h4>
-      <p>
-        A small subset of products (notably products 101, 102, and 104) contribute
-        the majority of total lost revenue, indicating clear prioritization opportunities.
-      </p>
-    </div>
 
-    <div class="insight-card">
-      <h4>⚠️ Overselling as the Root Cause</h4>
-      <p>
-        Negative stock events occur more frequently than pure stockouts and result
-        in higher lost revenue, pointing to fulfillment and inventory synchronization issues.
-      </p>
-    </div>
+<div class="insights-grid">
 
-    <div class="insight-card">
-      <h4>🏬 High-Risk Stores</h4>
-      <p>
-        Port Harcourt Outlet, Lagos Flagship, and Abuja Main Store consistently appear
-        as high-risk locations across stockout, overselling, and expiry metrics.
-      </p>
-    </div>
-
-    <div class="insight-card">
-      <h4>📦 Overstock & Expiry Exposure</h4>
-      <p>
-        Product 105 shows repeated overstock across multiple stores and batches,
-        with expired inventory contributing directly to avoidable financial loss.
-      </p>
-    </div>
+  <div class="insight-card">
+    <h4>💸 Revenue Loss Concentration</h4>
+    <p>
+      Revenue loss is not evenly distributed ; a small number of products (notably Product 101, 102, and 104) account for the majority of total financial leakage.  
+      <b>Decision Impact:</b> Prioritize these SKUs for immediate supply chain and demand correction.
+    </p>
   </div>
+
+  <div class="insight-card">
+    <h4>⚠️ Overselling as Primary Failure Point</h4>
+    <p>
+      Negative stock events (overselling) generate more financial loss than standard stockouts, indicating system-level inventory synchronization failures across stores.  
+      <b>Decision Impact:</b> Fix real-time stock visibility before increasing inventory levels.
+    </p>
+  </div>
+
+  <div class="insight-card">
+    <h4>🏬 High-Risk Store Cluster</h4>
+    <p>
+      A small group of stores (Port Harcourt, Lagos Flagship, Abuja Main) consistently drive the highest inventory-related losses across multiple failure types.  
+      <b>Decision Impact:</b> Apply store-level control policies instead of uniform inventory rules.
+    </p>
+  </div>
+
+  <div class="insight-card">
+    <h4>📦 Demand–Supply Imbalance</h4>
+    <p>
+      Certain products (especially Product 105) show repeated overstock followed by expiry, indicating poor demand forecasting and weak stock rotation.  
+      <b>Decision Impact:</b> Introduce demand-based replenishment and batch rotation rules.
+    </p>
+  </div>
+
+</div>
 
   <!-- RECOMMENDATIONS -->
-  <h3 class="section-title" style="text-align:center;">Business Recommendations</h3>
-  <div class="insights-grid">
-    <div class="insight-card">
-      <h4>🔔 Prevent Overselling</h4>
-      <p>
-        Introduce real-time stock validation and alerts before inventory reaches zero
-        to reduce lost revenue from negative stock events.
-      </p>
-    </div>
+  <h3 class="section-title" style="text-align:center;">Business Recommendations</h3
 
-    <div class="insight-card">
-      <h4>📊 Demand-Aligned Replenishment</h4>
-      <p>
-        Adjust reorder quantities based on observed average daily demand to minimize
-        both stockouts and overstock.
-      </p>
-    </div>
+<div class="insights-grid">
 
-    <div class="insight-card">
-      <h4>🗂️ Batch-Level Expiry Tracking</h4>
-      <p>
-        Actively monitor high-risk batches and redistribute inventory before expiry
-        to reduce write-offs.
-      </p>
-    </div>
+  <div class="insight-card">
+    <h4>🔔 Implement Real-Time Stock Control System</h4>
+    <p>
+      Deploy automated inventory validation to prevent sales when stock levels reach critical thresholds.  
+      This directly reduces overselling and eliminates hidden revenue leakage from negative stock events.
+    </p>
   </div>
 
+  <div class="insight-card">
+    <h4>📊 Prioritize High-Impact SKUs</h4>
+    <p>
+      Focus operational intervention on top loss-driving products (101, 102, 104) rather than spreading effort across all SKUs.  
+      This ensures maximum ROI on inventory correction efforts.
+    </p>
+  </div>
+
+  <div class="insight-card">
+    <h4>🏬 Introduce Store-Level Inventory Governance</h4>
+    <p>
+      Apply differentiated inventory policies for high-risk stores instead of uniform stock rules across all locations.  
+      This reduces localized inefficiencies and improves stock accuracy.
+    </p>
+  </div>
+
+  <div class="insight-card">
+    <h4>📦 Demand-Based Replenishment System</h4>
+    <p>
+      Replace static ordering with demand-driven replenishment based on historical consumption patterns.  
+      This reduces both stockouts and overstock-related expiry losses.
+    </p>
+  </div>
+
+  <div class="insight-card">
+    <h4>♻️ Expiry Risk Mitigation Framework</h4>
+    <p>
+      Implement batch-level monitoring to redistribute slow-moving inventory before expiry.  
+      This directly reduces write-offs and improves inventory turnover efficiency.
+    </p>
+  </div>
+
+</div>
   <!-- TOOLS -->
   <div class="tools">
     🔧 Tools Used: Python (Pandas, Matplotlib, Numpy), Plotly, Streamlit  
