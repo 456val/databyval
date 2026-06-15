@@ -222,53 +222,96 @@
 
     <!-- Key Insights -->
     <h3 class="section-title"><center>Key Insights</center></h3>
-    <div class="insights-grid">
-      <div class="insight-card">
-        <h4>📉 Revenue Leak from Stockouts (Prophet Insights)</h4>
-        <p>
-          Prophet helps the business see demand changes early so products don’t disappear from the shelves.
-        </p>
-        <ul>
-          <li>The model follows sales trends and seasonal behavior, understanding when demand spikes.</li>
-          <li>Forecasts warn the business early, giving time to prepare stock.</li>
-          <li>Recommends higher inventory during busy periods, reducing stockout risk.</li>
-          <li>Protects revenue by keeping products available for customers.</li>
-        </ul>
-        <p><strong>Best Use:</strong> Seasonal products, promotions, and volatile demand markets.</p>
-      </div>
+<div class="insights-grid">
 
-      <div class="insight-card">
-        <h4>📈 ARIMA Forecast Insights</h4>
-        <p>
-          ARIMA helps understand stable demand patterns for steady inventory planning.
-        </p>
-        <ul>
-          <li>Shows reliable sales trends for controlled planning.</li>
-          <li>Stable prediction with ~12% error builds trust in inventory decisions.</li>
-          <li>Recommends reasonable stock levels to avoid overstocking.</li>
-          <li>Includes small safety buffer for surprises, keeping shelves filled without waste.</li>
-        </ul>
-        <p><strong>Best Use:</strong> Mature products with predictable demand.</p>
-      </div>
-    </div>
+  <div class="insight-card">
+    <h4>📉 Demand Volatility is Driving Hidden Stockouts</h4>
+    <p>
+      Forecasting shows clear demand spikes that are not reflected in current inventory planning, leading to preventable stockout events.
+    </p>
+    <ul>
+      <li>Demand patterns are seasonal and not captured in static reorder rules.</li>
+      <li>Stockouts consistently occur after demand acceleration phases.</li>
+      <li>Revenue loss is driven by inability to anticipate demand shifts.</li>
+    </ul>
+    <p><strong>Decision Impact:</strong> Replace static replenishment with forecast-driven inventory planning.</p>
+  </div>
+
+  <div class="insight-card">
+    <h4>📈 Forecast Models Reveal Two Demand Systems</h4>
+    <p>
+      ARIMA and Prophet expose fundamentally different product behaviors — stable vs seasonal demand patterns.
+    </p>
+    <ul>
+      <li>ARIMA products show predictable consumption cycles.</li>
+      <li>Prophet products show strong seasonality and spikes.</li>
+      <li>Using one model for all products creates inventory imbalance.</li>
+    </ul>
+    <p><strong>Decision Impact:</strong> Segment products by demand behavior and assign forecasting logic accordingly.</p>
+  </div>
+
+  <div class="insight-card">
+    <h4>💰 Revenue Loss is Preventable, Not Random</h4>
+    <p>
+      Stockouts are not isolated incidents — they follow repeatable patterns linked to forecastable demand increases.
+    </p>
+    <ul>
+      <li>Losses occur after predictable demand surges.</li>
+      <li>Inventory replenishment lags behind demand signals.</li>
+      <li>Most revenue leakage is operational, not market-driven.</li>
+    </ul>
+    <p><strong>Decision Impact:</strong> Introduce proactive replenishment triggers based on forecast thresholds.</p>
+  </div>
+
+  <div class="insight-card">
+    <h4>📦 Inventory Planning is Reacting Too Late</h4>
+    <p>
+      Current replenishment systems respond after stock depletion rather than before demand peaks occur.
+    </p>
+    <ul>
+      <li>Reorder decisions are lagging indicators.</li>
+      <li>No forward-looking inventory buffer strategy exists.</li>
+      <li>Stock decisions are disconnected from demand forecasting outputs.</li>
+    </ul>
+    <p><strong>Decision Impact:</strong> Shift from reactive ordering to predictive stock control system.</p>
+  </div>
+
+</div>
 
     <!-- Recommendations -->
     <h3 class="section-title"><center>Recommendations</center></h3>
-    <div class="insights-grid">
-      <div class="insight-card">
-        <h4>📦 Use the Right Forecast for the Right Product</h4>
-        <p>ARIMA for steady sales, Prophet for seasonal/volatile demand to keep shelves stocked.</p>
-      </div>
-      <div class="insight-card">
-        <h4>⏱ Reorder Before Stock Runs Out</h4>
-        <p>Link forecasts to reorder points to prevent empty shelves and long stockout periods.</p>
-      </div>
-      <div class="insight-card">
-        <h4>💰 Protect Revenue with Safety Stock</h4>
-        <p>Maintain small safety buffers for key products to always satisfy customer demand.</p>
-      </div>
-    </div>
+  
+<div class="insights-grid">
 
+  <div class="insight-card">
+    <h4>🧠 Implement Forecast-Driven Replenishment System</h4>
+    <p>
+      Integrate ARIMA and Prophet outputs directly into inventory planning to trigger reorders before demand peaks occur.
+    </p>
+  </div>
+
+  <div class="insight-card">
+    <h4>📊 Segment Products by Demand Behavior</h4>
+    <p>
+      Separate SKUs into stable and seasonal categories and assign different forecasting models to each group.
+    </p>
+  </div>
+
+  <div class="insight-card">
+    <h4>⏱ Introduce Predictive Reorder Triggers</h4>
+    <p>
+      Replace static reorder points with dynamic thresholds based on forecasted demand curves.
+    </p>
+  </div>
+
+  <div class="insight-card">
+    <h4>🛡 Build Revenue Protection Layer</h4>
+    <p>
+      Add safety stock rules for high-impact products to prevent stockouts during forecasted demand surges.
+    </p>
+  </div>
+
+</div>
     <!-- Tools -->
     <div class="tools">
       🔧 Tools Used: Python, Streamlit, ARIMA, Prophet, Pandas, Plotly
