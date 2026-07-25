@@ -13,6 +13,12 @@
       text-align: center;
       padding: 140px 20px 100px;
     }
+    .visual img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:12px;
+}
 
     .project-hero h1 {
       font-size: 2.8rem;
@@ -156,8 +162,9 @@
 
   <!-- Hero Section -->
   <section class="project-hero">
-    <h1>📊 Sales Performance Case Study</h1>
-    <p>A professional storytelling case study showing insights, trends, and recommendations from sales data analysis</p>
+    <h1>Retail Sales Performance Analysis</h1>
+
+<p>Business Intelligence case study using SQL to analyze retail transactions, uncover sales trends, and deliver actionable business insights.</p>
   </section>
 
   <!-- Main Project Detail -->
@@ -167,61 +174,83 @@
       <!-- Project Overview Section -->
       <h3 class="section-title">Project Overview</h3>
       <p>
-        Sales data can be complex and overwhelming, making it difficult to spot patterns or understand customer behavior. This PROJECT dives into historical sales data to uncover key insights across different timeframes—daily, weekly, monthly, and quarterly. The aim is to identify peak sales periods, analyze time-of-day and weekday/weekend trends, and ultimately provide actionable recommendations. By transforming raw numbers into a structured narrative, this project tells the story behind the data and highlights opportunities for smarter business planning and operational efficiency.
-      </p>
+Retail businesses generate thousands of transactions each day, making it challenging to monitor sales performance, identify seasonal demand, and understand customer purchasing behavior. This project uses SQL to analyze historical retail sales data, answering key business questions related to invoice activity, revenue performance, customer purchasing patterns, and operational trends. The insights support better inventory planning, staffing decisions, and marketing strategies.
+</p>
 
       <!-- Methodology Section -->
       <h3 class="section-title">Methodology</h3>
-      <p>
-        The analysis followed a structured approach using SQL and Excel:
-      </p>
-      <ul>
-        <li>Aggregated invoices and revenue by day, week, month, and quarter to identify trends.</li>
-        <li>Examined time-of-day and weekday/weekend patterns to understand customer behavior.</li>
-        <li>Explored seasonal and quarterly revenue fluctuations to reveal opportunities and slow periods.</li>
-        <li>Visualized key findings using charts and dashboards for clear storytelling.</li>
-        <li>Derived actionable recommendations based on observed patterns and insights.</li>
-      </ul>
+     <p>
+The analysis followed a structured business intelligence workflow using SQL Server:
+</p>
+
+<ul>
+<li>Analyzed invoice generation across daily, weekly, and monthly periods.</li>
+<li>Calculated revenue trends using time-based aggregations.</li>
+<li>Examined customer purchasing behavior by hour of day and day of week.</li>
+<li>Evaluated seasonal performance across months and quarters.</li>
+<li>Compared weekday and weekend sales performance.</li>
+<li>Investigated cancellations and refund activity.</li>
+<li>Translated analytical findings into business recommendations.</li>
+</ul>
 
       <!-- Outcome Section -->
       <h3 class="section-title">Outcome</h3>
       <p>
-        The analysis revealed significant trends, behavioral patterns, and operational insights that can guide business decisions and planning.
-      </p>
+The analysis identified peak sales periods, customer purchasing patterns, seasonal demand, and operational opportunities that can help improve staffing, inventory management, promotional planning, and revenue performance.
+</p>
+    <h3 class="section-title">Business Questions</h3>
+
+<ul>
+<li>How many invoices were generated each day, week, and month?</li>
+
+<li>How does revenue change over time?</li>
+
+<li>What are the busiest hours for customer purchases?</li>
+
+<li>Which weekday records the highest order volume?</li>
+
+<li>Are there seasonal sales patterns?</li>
+
+<li>How does weekday revenue compare with weekend revenue?</li>
+
+<li>Which months generate the highest and lowest sales volume?</li>
+
+<li>When do cancellations and refunds occur?</li>
+</ul>
     </div>
 
     <h3 class="section-title"><center>Visual Highlights</center></h3>
     <div class="visuals-grid">
-      <div class="visual"><img src="image/SS1.png" width="1000px" height="220px" alt="Daily Revenue Trend"></div>
-      <div class="visual"><img src="image/SS2.png" width="1000px" height="220px" alt="Weekly Performance"></div>
-      <div class="visual"><img src="image/SS3.png" width="1000px" height="220px" alt="Monthly Summary"></div>
-      <div class="visual"><img src="image/SS4.png" width="1000px" height="220px" alt="Quarter Comparison"></div>
+      <div class="visual"><img src="image/SS1.png" alt="Daily Revenue Trend"></div>
+      <div class="visual"><img src="image/SS2.png"alt="Weekly Performance"></div>
+      <div class="visual"><img src="image/SS3.png"  alt="Monthly Summary"></div>
+      <div class="visual"><img src="image/SS4.png" w alt="Quarter Comparison"></div>
     </div>
 
     <h3 class="section-title"><center>Key Insights</center></h3>
     <div class="insights-grid">
       <div class="insight-card">
-        <h4>📅 Daily & Weekly Trends</h4>
+        <h4>Daily & Weekly Trends</h4>
         <p>October 6 had the highest invoice count; February 6 the lowest. Week 47 of 2011 showed peak weekly activity, while Week 52 reflected a post-holiday slowdown.</p>
       </div>
       <div class="insight-card">
-        <h4>🗓️ Monthly & Quarterly Trends</h4>
+        <h4>Monthly & Quarterly Trends</h4>
         <p>December 2011 generated the highest revenue; Q1 2011 totaled ₦17.41M. Q4 2010 also performed strongly, highlighting seasonality effects.</p>
       </div>
       <div class="insight-card">
-        <h4>📈 Weekday vs Weekend</h4>
+        <h4>Weekday vs Weekend</h4>
         <p>Weekdays outperformed weekends overall, but Q3 saw slightly higher weekend sales, likely due to seasonal campaigns.</p>
       </div>
       <div class="insight-card">
-        <h4>🕒 Time-of-Day Behavior</h4>
+        <h4>Time-of-Day Behavior</h4>
         <p>Peak transactions occurred between 12–4 PM. Activity increased from 8–12 PM and declined after 4 PM, revealing optimal engagement windows.</p>
       </div>
       <div class="insight-card">
-        <h4>📆 Day-of-Week Performance</h4>
+        <h4>Day-of-Week Performance</h4>
         <p>Thursday had the highest invoice count, followed by Wednesday and Tuesday. Sundays consistently had the lowest activity.</p>
       </div>
       <div class="insight-card">
-        <h4>💰 Revenue Distribution</h4>
+        <h4>Revenue Distribution</h4>
         <p>Average revenue highlighted profitability per transaction; median revenue offered a balanced view unaffected by outliers.</p>
       </div>
     </div>
@@ -229,20 +258,25 @@
     <h3 class="section-title"><center>Recommendations</center></h3>
     <div class="insights-grid">
       <div class="insight-card">
-        <h4>🕒 Optimize Engagement Timing</h4>
+        <h4>Optimize Engagement Timing</h4>
         <p>Focus campaigns and activities during peak hours (12–4 PM) to maximize engagement.</p>
       </div>
       <div class="insight-card">
-        <h4>📅 Plan Staffing & Resources</h4>
+        <h4>Plan Staffing & Resources</h4>
         <p>Adjust staffing on high-activity days (Thursdays, peak weeks) and reduce on low-activity days to improve operational efficiency.</p>
       </div>
       <div class="insight-card">
-        <h4>🗓️ Focus on High-Performing Periods</h4>
+        <h4>Focus on High-Performing Periods</h4>
         <p>Prioritize marketing, inventory, and resources around top-performing months and quarters for optimal results.</p>
       </div>
     </div>
+    <h3 class="section-title">Business Impact</h3>
+
+<p>
+The analysis provides decision-makers with greater visibility into sales performance and customer purchasing behavior. These insights can support inventory planning, workforce scheduling, promotional timing, and operational decision-making while reducing reliance on manual reporting.
+</p>
     <div class="tools">
-      🔧 Tools Used: Power BI
+       <p>SQL Server • T-SQL • Excel </p>
       <p><a href="https://github.com/456Val/Sales-Performance-Analysis-SQL" style="color:#fff;">Project Repository</a></p>
     </div>
 
